@@ -17,7 +17,7 @@ export const theme = {
   },
   fonts: {
     default: {
-      fontFamily: "SofiaSansSemiCondensed-Regular",
+      fontFamily: "SofiaSansSemiCondensed-Bold", 
       fontSize: 16,
       color: "#053654",
     },
@@ -34,8 +34,8 @@ export const theme = {
     },
     h3: {
       fontFamily: "SofiaSansSemiCondensed-ExtraBold", 
-      fontSize: 24,
-      letterSpacing: 2,
+      fontSize: 15,
+      letterSpacing: 0,
       color: "#053654",
     },
     subheading: {
@@ -49,7 +49,7 @@ export const theme = {
       color: "#053654",
     },
     label2: {
-      fontFamily: "SofiaSansSemiCondensed-Italic", 
+      fontFamily: "SofiaSansSemiCondensed-MediumItalic", 
       fontSize: 14,
       color: "#38677C",
     },
