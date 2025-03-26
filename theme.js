@@ -34,8 +34,8 @@ export const theme = {
     },
     h3: {
       fontFamily: "SofiaSansSemiCondensed-ExtraBold", 
-      fontSize: 15,
-      letterSpacing: 0,
+      fontSize: 18,
+      letterSpacing: 2,
       color: "#053654",
     },
     subheading: {
@@ -45,13 +45,25 @@ export const theme = {
     },
     label1: {
       fontFamily: "SofiaSansSemiCondensed-Bold", 
-      fontSize: 16,
+      fontSize: 18,
+      color: "#053654",
+    },
+    label11: {
+      fontFamily: "SofiaSansSemiCondensed-Black", 
+      fontSize: 25,
       color: "#053654",
     },
     label2: {
       fontFamily: "SofiaSansSemiCondensed-MediumItalic", 
-      fontSize: 14,
+      fontSize: 16,
       color: "#38677C",
     },
+    labelLarge: {
+      fontFamily: "SofiaSansSemiCondensed-Bold",
+      fontSize: 16,
+      color: "#053654",
+    },
+
   },
+ 
 };
