@@ -5,11 +5,10 @@ import { Provider as PaperProvider, Text } from "react-native-paper";
 import { theme } from "./theme";
 import { Navigation } from "./src/infraestructure/navigation";
 import { useFonts } from "expo-font";
-
+import { SavedProfilesProvider } from "./src/utils/SavedProfilesContext";
 
 
 export default function App() {
-
 
   const [fontsLoaded] = useFonts({
     "SofiaSansSemiCondensed-Thin": require("./assets/fonts/SofiaSansSemiCondensed-Thin.ttf"),
@@ -38,12 +37,16 @@ export default function App() {
   
 
   return (
+    <SavedProfilesProvider>
+
     <PaperProvider theme={theme}>
       <View style={styles.container}>
         <Navigation/>
         <StatusBar style="auto" />
       </View>
     </PaperProvider>
+
+    </SavedProfilesProvider>
   );
 }
 
