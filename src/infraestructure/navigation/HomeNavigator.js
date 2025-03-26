@@ -9,8 +9,8 @@ const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
   return (
     <HomeStack.Navigator screenOptions={{ headerShown: true }}>
-      <HomeStack.Screen name="Feed" component={HomeScreen} />
-      <HomeStack.Screen name="ProfileDetail" component={HomeDetailScreen} />
+      <HomeStack.Screen name="SOLICITANTES" component={HomeScreen} />
+      <HomeStack.Screen name="INFO DEL SOLICITANTE" component={HomeDetailScreen} />
     </HomeStack.Navigator>
   );
 };
