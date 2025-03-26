@@ -24,12 +24,7 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <View style={styles.container}>
-      <Text variant="h1" style={{ color: theme.colors.primary }}>
-      Welcome to React Native Paper!
-        </Text>
-
         <Navigation/>
-        
         <StatusBar style="auto" />
       </View>
     </PaperProvider>
