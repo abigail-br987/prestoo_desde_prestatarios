@@ -8,6 +8,7 @@ export const theme = {
     darkerBaseColor: "#C4CEC4",
     primaryLightColor: "#D4FAF7",
     primaryAccent:"#00E7A5",
+    darkerPrimaryAccent:"#058A64",
     secondAccent:"#9435DD",
     thirdAccent:"#FBCF7C",
     textColor:"#053654",
