@@ -1,12 +1,27 @@
+import { DefaultTheme } from "react-native-paper";
+
 export const theme = {
-    colors: {
-      primary: "#6200ea",
-      background: "#f5f5f5",
-      text: "#333333",
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: "#6200ea",
+    accent: "#03dac4", 
+    background: "#f5f5f5", 
+    surface: "#ffffff",
+    text: "#333333", 
+  },
+  fonts: {
+    regular: {
+      fontFamily: "System",
+      fontWeight: "normal",
     },
-    fontSizes: {
-      small: "12px",
-      medium: "16px",
-      large: "20px",
+    medium: {
+      fontFamily: "System",
+      fontWeight: "500",
     },
+    bold: {
+      fontFamily: "System",
+      fontWeight: "bold",
+    },
+  },
 };

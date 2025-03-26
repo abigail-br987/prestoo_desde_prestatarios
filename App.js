@@ -1,34 +1,8 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Provider as PaperProvider, DefaultTheme, Text } from "react-native-paper";
-
-// Define custom theme
-const theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#6200ea",
-    accent: "#03dac4", 
-    background: "#f5f5f5", 
-    surface: "#ffffff",
-    text: "#333333", 
-  },
-  fonts: {
-    regular: {
-      fontFamily: "System",
-      fontWeight: "normal",
-    },
-    medium: {
-      fontFamily: "System",
-      fontWeight: "500",
-    },
-    bold: {
-      fontFamily: "System",
-      fontWeight: "bold",
-    },
-  },
-};
+import { Provider as PaperProvider, Text } from "react-native-paper";
+import { theme } from "./theme";
 
 export default function App() {
   return (
