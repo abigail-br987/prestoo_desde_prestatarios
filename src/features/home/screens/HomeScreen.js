@@ -217,7 +217,7 @@ export const HomeScreen = ({ navigation }) => {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("ProfileDetail", { profile: item })
+              navigation.navigate("INFO DEL SOLICITANTE", { profile: item })
             }
             style={{
               flex: 1,
