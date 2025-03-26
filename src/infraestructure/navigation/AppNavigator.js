@@ -3,37 +3,46 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { View, Text } from "react-native";
 import { MessagesScreen } from "../../features/messages/screens/MessagesScreen";
-
-
-const DummyScreen = ({ title }) => (
-  <View style={{ justifyContent: "center", alignItems: "center" }}>
-    <Text style={{ fontSize: 24 }}>{title}</Text>
-  </View>
-);
-
+import { theme } from "../../../theme";
+import { HomeNavigator } from "./HomeNavigator";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  Inicio: "home",
-  Mensajes: "chatbubble",
-  Préstamos: "cash",
-  Anuncios: "megaphone",
-  Cuenta: "person",
+  Home: "home",
+  Mensajes: "chatbubble-outline",
+  Préstamos: "cash-outline",
+  Anuncios: "megaphone-outline",
+  Cuenta: "person-outline",
 };
 
 const createScreenOptions = ({ route }) => ({
-  tabBarIcon: ({ size, color }) => (
-    <Ionicons name={TAB_ICON[route.name]} size={size} color={color} />
+  headerShown: false,
+  tabBarIcon: ({ focused, size, color }) => (
+    <Ionicons
+      name={TAB_ICON[route.name]}
+      size={focused ? 28 : 24}
+      color={focused ? theme.colors.darkerPrimaryAccent : theme.colors.textColor}
+    />
   ),
-  tabBarActiveTintColor: "#007AFF", 
-  tabBarInactiveTintColor: "gray", 
-  tabBarLabelStyle: { fontSize: 12 },
-  tabBarStyle: { height: 100, paddingBottom: 50 },
+  tabBarLabelStyle: {
+    fontSize: 12,
+    fontFamily: "SofiaSansSemiCondensed-Bold",
+  },
+  tabBarStyle: {
+    backgroundColor: theme.colors.primaryLightColor,
+    height: 60,
+    paddingBottom: 15,
+    paddingTop: 2,
+    borderTopWidth: 2,
+    borderColor: theme.colors.textColor,
+  },
+  tabBarActiveTintColor: theme.colors.darkerPrimaryAccent,
+  tabBarInactiveTintColor: theme.colors.textColor,
 });
 
 export const AppNavigator = () => (
   <Tab.Navigator screenOptions={createScreenOptions}>
-    <Tab.Screen name="Inicio" component={MessagesScreen} />
+    <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Mensajes" component={MessagesScreen} />
     <Tab.Screen name="Préstamos" component={MessagesScreen} />
     <Tab.Screen name="Anuncios" component={MessagesScreen} />
