@@ -4,13 +4,12 @@ export const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    baseColor: "#FEFEF4", 
+    baseColor: "#fafaf2", 
     darkerBaseColor: "#C4CEC4",
-    primaryLightColor: "#D4FAF7",
+    primaryLightColor: "#D1FBF9",
     primaryAccent:"#00E7A5",
-    darkerPrimaryAccent:"#058A64",
     secondAccent:"#9435DD",
-    thirdAccent:"#FBCF7C",
+    thirdAccent:"#FFAA01",
     textColor:"#053654",
     lightTextColor:"#38677C",
     intensePrimaryAccent:"#6FF0E5",
@@ -28,7 +27,7 @@ export const theme = {
     },
     h2: {
       fontFamily: "SofiaSansSemiCondensed-Black", 
-      fontSize: 30,
+      fontSize: 26,
       letterSpacing: 1.5,
       color: "#053654",
     },
@@ -39,9 +38,12 @@ export const theme = {
       color: "#053654",
     },
     subheading: {
-      fontFamily: "SofiaSansSemiCondensed-BoldItalic", 
-      fontSize: 18,
+      fontFamily: "SofiaSansSemiCondensed-Bold", 
+      fontSize: 15,
       color: "#053654",
+      letterSpacing: 2,
+      textTransform: "uppercase",
+
     },
     label1: {
       fontFamily: "SofiaSansSemiCondensed-Bold", 
@@ -54,9 +56,9 @@ export const theme = {
       color: "#053654",
     },
     label2: {
-      fontFamily: "SofiaSansSemiCondensed-MediumItalic", 
+      fontFamily: "SofiaSansSemiCondensed-SemiBold", 
       fontSize: 16,
-      color: "#38677C",
+      color: "#053654",
     },
     labelLarge: {
       fontFamily: "SofiaSansSemiCondensed-Bold",
