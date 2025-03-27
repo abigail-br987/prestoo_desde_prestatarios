@@ -10,7 +10,7 @@ const IconButton = ({ onPress, iconName, color, style }) => {
       style={[
         {
           backgroundColor: color,
-          padding: 2,
+          padding: 5,
           elevation: 5,
           borderRadius: 50, 
           zIndex: 2,
