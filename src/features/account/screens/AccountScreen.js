@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { useTheme } from "react-native-paper";
 import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import ActionButton from "../../messages/components/ActionButton";
 import SettingsItem from "../components/SettingsItem";
 const AccountScreen = () => {
   const { colors, fonts } = useTheme();
@@ -40,20 +41,15 @@ const AccountScreen = () => {
           </View>
         </View>
 
-        <View
-          style={{
-            flexDirection: "row",
-            paddingHorizontal: 5,
-            paddingLeft: 12,
-            backgroundColor: colors.primaryLightColor,
-            alignItems: "center",
-            elevation: 5,
-            gap: 10,
-          }}
-        >
-          <Text style={[fonts.h3]}>EDITAR</Text>
-          <Ionicons name={"create-outline"} size={25} color={"#053654"} />
-        </View>
+
+        <ActionButton
+        onPress={() => console.log("editar")}
+        iconName="create-outline"
+        text="Editar"
+        backgroundColor={colors.intensePrimaryAccent}
+        textColor={colors.textColor}
+      />
+
       </View>
 
       <View
@@ -63,7 +59,7 @@ const AccountScreen = () => {
       >
         <View
           style={{
-            backgroundColor: colors.primaryLightColor,
+            backgroundColor: colors.baseColor,
             padding: 15,
             elevation: 5,
           }}
@@ -73,6 +69,7 @@ const AccountScreen = () => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
+              elevation:5
             }}
           >
             <Text style={[fonts.h3]}>PREFERENCIAS</Text>
