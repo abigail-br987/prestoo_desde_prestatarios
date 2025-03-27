@@ -25,7 +25,7 @@ export const HomeNavigator = () => {
       }}
     >
       <HomeStack.Screen
-        name="SOLICITANTES"
+        name="PRESTAMISTAS"
         component={HomeScreen}
         options={{
           headerShown: true,
@@ -34,7 +34,7 @@ export const HomeNavigator = () => {
             elevation: 10,
           },
 
-          headerTitle: () => <Text style={[fonts.h2]}>PRESTATARIOS</Text>,
+          headerTitle: () => <Text style={[fonts.h2]}>PRESTAMISTAS</Text>,
 
           headerRight: () => (
             <View
