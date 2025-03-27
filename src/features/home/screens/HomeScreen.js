@@ -9,6 +9,8 @@ import Card from "react-native-paper";
 import { useSavedProfiles } from "../../../utils/SavedProfilesContext";
 import { Ionicons } from "@expo/vector-icons";
 import { profiles } from "../../../utils/DummyData";
+import IconButton from "../components/IconButton";
+import { Pressable } from "react-native";
 
 export const HomeScreen = ({ navigation }) => {
   const { colors, fonts } = useTheme();
@@ -28,57 +30,78 @@ export const HomeScreen = ({ navigation }) => {
         numColumns={2}
         style={{ padding: 10 }}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("INFO DEL SOLICITANTE", { profile: item })
-            }
+          <View
             style={{
+              backgroundColor: colors.intensePrimaryAccent,
               flex: 1,
-              backgroundColor: colors.baseColor,
-              borderColor: colors.textColor,
+              marginHorizontal: 10,
+              marginVertical: 10,
               borderRadius: 5,
-              marginTop: 50,
-              marginHorizontal: 5,
-              padding: 15,
-              alignItems: "center",
-              position: "relative",
               paddingTop: 50,
-              elevation: 10,
-                      }}
+              position: "relative",
+              elevation: 5,
+            }}
           >
             <TouchableOpacity
-              onPress={() => toggleSave(item.id)}
+              onPress={() =>
+                navigation.navigate("INFO DEL SOLICITANTE", { profile: item })
+              }
               style={{
-                position: "absolute",
-                top: 10,
-                right: 10,
-                zIndex: 2,
+                flex: 1,
+                backgroundColor: colors.baseColor,
+                borderTopLeftRadius: 30,
+                borderTopRightRadius: 30,
+                borderRadius: 5,
+                padding: 15,
+                alignItems: "center",
+                paddingTop: 50,
               }}
             >
-              <Ionicons
-                name={savedProfiles[item.id] ? "bookmark" : "bookmark-outline"}
-                size={24}
-                color={colors.textColor}
+              <IconButton
+                onPress={() => toggleSave(item.id)}
+                iconName={
+                  savedProfiles[item.id] ? "bookmark" : "bookmark-outline"
+                }
+                style={{ position: "absolute", top: 10, right: 15 }}
+                color={colors.primaryLightColor}
               />
+
+              <IconButton
+                onPress={() =>
+                  navigation.navigate("Mensajes", {
+                    screen: "CHAT CON SOLICITANTE",
+                    params: {
+                      profileId: item.id,
+                      name: item.name,
+                    },
+                  })
+                }
+                iconName="chatbubble-ellipses-outline"
+                style={{ position: "absolute", top: 10, left: 15 }}
+                color={colors.primaryLightColor}
+              />
+
+              <Image
+                source={{ uri: item.profileImage }}
+                style={{
+                  width: 80,
+                  height: 80,
+                  elevation: 5,
+                  borderRadius: 40,
+                  position: "absolute",
+                  top: -40,
+                  zIndex: 1,
+                }}
+              />
+
+              <Text style={[fonts.h3]}>{item.name}</Text>
+              <Text style={[fonts.label2]}>{item.age} años</Text>
+              <Text style={[fonts.label2]}>{item.status}</Text>
+              <Text style={[fonts.label2]}>
+                Necesita {item.requestedAmount}
+              </Text>
             </TouchableOpacity>
-
-            <Image
-              source={{ uri: item.profileImage }}
-              style={{
-                width: 80,
-                height: 80,
-                elevation:5,
-                borderRadius:40,
-                position: "absolute",
-                top: -40,
-                zIndex: 1,
-              }}
-            />
-
-            <Text style={[fonts.h3]}>{item.name}</Text>
-            <Text style={[fonts.label2]}>{item.age} años</Text>
-            <Text style={[fonts.label2]}>{item.status}</Text>
-          </TouchableOpacity>
+          </View>
         )}
       />
     </View>
