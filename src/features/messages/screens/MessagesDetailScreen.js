@@ -4,8 +4,9 @@ import { useTheme } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { profiles, messages } from "../../../utils/DummyData";
-import IconButton from "../../home/components/IconButton";
 import ActionButton from "../components/ActionButton";
+import ProfileHeader from "../components/ProfileHeader";
+import ChatBubble from "../components/ChatBubble";
 
 export const MessagesDetailScreen = ({ route }) => {
   const { colors, fonts } = useTheme();
@@ -34,33 +35,7 @@ export const MessagesDetailScreen = ({ route }) => {
         gap: 10,
       }}
     >
-      <TouchableOpacity
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          marginBottom: 15,
-          backgroundColor: colors.baseColor,
-          borderRadius: 10,
-        }}
-        onPress={() =>
-          navigation.navigate("Home", {
-            screen: "HomeDetailScreen",
-            params: { profile },
-          })
-        }
-      >
-        <Image
-          source={{ uri: profile?.profileImage }}
-          style={{ width: 60, height: 60, borderRadius: 30, marginRight: 15 }}
-        />
-        <View style={{ flex: 1 }}>
-          <Text style={[fonts.h3]}>{profile?.name}</Text>
-          <Text style={[fonts.label1]}>
-            {profile?.age} años | {profile?.status}
-          </Text>
-          <Text style={[fonts.label2]}>{profile?.shortDescription}</Text>
-        </View>
-      </TouchableOpacity>
+      <ProfileHeader profile={profile} />
 
       <ActionButton
         onPress={() => console.log("alert")}
@@ -92,43 +67,7 @@ export const MessagesDetailScreen = ({ route }) => {
       <ScrollView style={{ flex: 1, marginTop: 10 }}>
         {chatMessages.map((msg, index) => {
           const isUser = msg.sender === "Tú";
-          return (
-            <View
-              key={index}
-              style={{
-                flexDirection: "row",
-                alignItems: "flex-end",
-                marginVertical: 5,
-                alignSelf: isUser ? "flex-end" : "flex-start",
-                justifyContent: isUser ? "flex-end" : "flex-start",
-              }}
-            >
-              {!isUser && (
-                <Image
-                  source={{ uri: profile?.profileImage }}
-                  style={{
-                    width: 30,
-                    height: 30,
-                    borderRadius: 15,
-                    marginRight: 8,
-                    elevation: 5,
-                  }}
-                />
-              )}
-              <View
-                style={{
-                  maxWidth: "75%",
-                  padding: 10,
-                  borderRadius: 10,
-                  elevation: 5,
-                  backgroundColor: colors.darkerBaseColor,
-                }}
-              >
-                <Text style={[fonts.label2]}>{msg.text}</Text>
-                <Text style={[fonts.label2]}>{msg.timestamp}</Text>
-              </View>
-            </View>
-          );
+          return <ChatBubble key={index} msg={msg} profile={profile} isUser={isUser} />;
         })}
       </ScrollView>
 
