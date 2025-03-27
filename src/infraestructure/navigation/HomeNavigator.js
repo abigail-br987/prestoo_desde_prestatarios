@@ -8,7 +8,7 @@ import { useTheme } from "react-native-paper";
 import { Button1 } from "../../features/home/components/Button1";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { Pressable } from "react-native";
+import ActionButton from "../../features/messages/components/ActionButton";
 
 const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
@@ -57,68 +57,50 @@ export const HomeNavigator = () => {
         }}
       />
 
-
-<HomeStack.Screen
-  name="INFO DEL SOLICITANTE"
-  component={HomeDetailScreen}
-  options={({ route, navigation }) => ({
-    headerTitle: () => (
-      <Text style={[fonts.h3, { textTransform: "uppercase" }]}>
-        {route.params.profile.name}
-      </Text>
-    ),
-    headerLeft: () => (
-      <TouchableOpacity
-        style={{ marginLeft: 15 }}
-        onPress={() => navigation.goBack()}
-      >
-        <Ionicons name="arrow-back" size={24} color={colors.textColor} />
-      </TouchableOpacity>
-    ),
-    headerRight: () => (
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          marginRight: 15,
-        }}
-      >
-        <Pressable
-          style={{
-            paddingVertical: 5,
-            paddingHorizontal: 12,
-            backgroundColor: colors.thirdAccent,
-            borderRadius: 5,
-            flexDirection: "row",
-            alignItems: "center",
-            elevation: 5,
-          }}
-          onPress={() =>
-            navigation.navigate("Mensajes", {
-              screen: "CHAT CON SOLICITANTE",
-              params: { profileId: route.params.profile.id, name: route.params.profile.name },
-            })
-          }
-        >
-          <Ionicons
-            name="chatbubble-ellipses"
-            size={15}
-            color={colors.textColor}
-          />
-          <Text style={[fonts.h3, { marginLeft: 5 }]}>Contacto</Text>
-        </Pressable>
-      </View>
-    ),
-  })}
-/>
-
-
-
-
+      <HomeStack.Screen
+        name="INFO DEL SOLICITANTE"
+        component={HomeDetailScreen}
+        options={({ route, navigation }) => ({
+          headerTitle: () => (
+            <Text style={[fonts.h3, { textTransform: "uppercase" }]}>
+              {route.params.profile.name}
+            </Text>
+          ),
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 15 }}
+              onPress={() => navigation.goBack()}
+            >
+              <Ionicons name="arrow-back" size={24} color={colors.textColor} />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginRight: 15,
+              }}
+            >
+              <ActionButton
+                onPress={() =>
+                  navigation.navigate("Mensajes", {
+                    screen: "CHAT CON SOLICITANTE",
+                    params: {
+                      profileId: route.params.profile.id,
+                      name: route.params.profile.name,
+                    },
+                  })
+                }
+                iconName="chatbubble-ellipses"
+                text="Contacto"
+                backgroundColor={colors.thirdAccent}
+                textColor={colors.textColor}
+              />
+            </View>
+          ),
+        })}
+      />
     </HomeStack.Navigator>
-
-
-
-
   );
 };
