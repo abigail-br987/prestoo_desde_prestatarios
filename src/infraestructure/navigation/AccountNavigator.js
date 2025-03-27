@@ -24,7 +24,7 @@ const AccountNavigator = () => {
         headerTitleAlign: "left",
         headerLeft: () => (
           <Image
-            source={{ uri: "https://randomuser.me/api/portraits/women/4.jpg" }}
+            source={{ uri: "https://randomuser.me/api/portraits/women/22.jpg" }}
             style={{
               width: 40,
               height: 40,
@@ -43,7 +43,7 @@ const AccountNavigator = () => {
           headerTitle: () => (
             <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
               <Text style={[fonts.h2]}>PERFIL</Text>
-              <Text style={[fonts.h3]}>(PATROCINADOR)</Text>
+              <Text style={[fonts.h3]}>(PRESTATARIO)</Text>
             </View>
           ),
           headerRight: () => (
