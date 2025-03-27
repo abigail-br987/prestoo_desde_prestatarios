@@ -36,8 +36,6 @@ const PrestamoItem = ({ prestamo }) => {
         padding: 15,
         borderRadius: 10,
         marginBottom: 10,
-        borderWidth: 2,
-        borderColor: colors.textColor,
         elevation: 5,
       }}
     >
@@ -68,20 +66,11 @@ const PrestamosScreen = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: colors.baseColor,
+        backgroundColor: colors.secondaryLightColor,
         padding: 20,
       }}
     >
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: "bold",
-          marginBottom: 15,
-          textAlign: "center",
-        }}
-      >
-        Préstamos Activos
-      </Text>
+
       <FlatList
         data={prestamos}
         keyExtractor={(item) => item.id}
