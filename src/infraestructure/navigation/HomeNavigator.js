@@ -68,7 +68,7 @@ export const HomeNavigator = () => {
           ),
           headerLeft: () => (
             <TouchableOpacity
-              style={{ marginLeft: 15 }}
+              style={{ marginHorizontal: 15 }}
               onPress={() => navigation.goBack()}
             >
               <Ionicons name="arrow-back" size={24} color={colors.textColor} />
