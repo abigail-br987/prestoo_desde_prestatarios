@@ -7,6 +7,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Image } from "react-native";
 import { View } from "react-native";
 import { Text } from "react-native";
+import { TouchableOpacity } from "react-native";
+
 
 const MessageStack = createStackNavigator();
 
@@ -47,13 +49,21 @@ export const MessageNavigator = () => {
         name="BUZON DE MENSAJES"
         component={MessagesScreen}
       />
-      <MessageStack.Screen
-        name="CHAT CON SOLICITANTE"
-        component={MessagesDetailScreen}
-        options={({ route }) => ({
-          title: route.params.name,
-        })}
-      />
+    <MessageStack.Screen
+  name="CHAT CON SOLICITANTE"
+  component={MessagesDetailScreen}
+  options={({ route, navigation }) => ({
+    headerTitle: route.params.name,
+    headerLeft: () => (
+      <TouchableOpacity
+        style={{ marginLeft: 15 }}
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="arrow-back" size={24} color={colors.textColor} />
+      </TouchableOpacity>
+    ),
+  })}
+/>
     </MessageStack.Navigator>
   );
 };
