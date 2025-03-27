@@ -1,21 +1,16 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View } from "react-native";
-import { Button1 } from "../../features/home/components/Button1";
 import AccountConfigScreen from "../../features/account/screens/AccountConfigScreen";
 import AccountScreen from "../../features/account/screens/AccountScreen";
-import { Button } from "react-native-paper";
 import { Text } from "react-native-paper";
-import { headerStyle } from "../../utils/styles";
 import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "react-native-paper";
 
 const AccountStack = createStackNavigator();
 export const AccountNavigator = () => {
- 
   const { colors, fonts } = useTheme();
-
   return (
     <AccountStack.Navigator
       screenOptions={{

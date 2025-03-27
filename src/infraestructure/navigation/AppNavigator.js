@@ -4,7 +4,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../../../theme";
 import { HomeNavigator } from "./HomeNavigator";
 import { MessageNavigator } from "./MessagesNavigator";
-import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
 import AccountNavigator from "./AccountNavigator";
 import PrestamosNavigator from "./PrestamosNavigator";
 import AnunciosNavigator from "./AnunciosNavigator";

@@ -1,13 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import MessagesScreen from "../../features/messages/screens/MessagesScreen";
-import MessagesDetailScreen from "../../features/messages/screens/MessagesDetailScreen";
 import { useTheme } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
-import { Image } from "react-native";
 import { View } from "react-native";
 import { Text } from "react-native";
-import PrestamosScreen from "../../features/prestamos/PrestamosScreen";
 import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
 
 const AnunciosStack = createStackNavigator();

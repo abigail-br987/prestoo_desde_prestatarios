@@ -1,14 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { View } from "react-native";
-import { TouchableOpacity } from "react-native";
 import { HomeScreen } from "../../features/home/screens/HomeScreen";
 import { HomeDetailScreen } from "../../features/home/screens/HomeDetailScreen";
-import { StyleSheet } from "react-native";
 import { Text } from "react-native";
 import { useTheme } from "react-native-paper";
 import { Button1 } from "../../features/home/components/Button1";
-import { Ionicons } from "@expo/vector-icons";
 
 const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
