@@ -9,7 +9,7 @@ import { MessageNavigator } from "./MessagesNavigator";
 import MessagesScreen from "../../features/messages/screens/MessagesScreen";
 import PrestamosScreen from "../../features/prestamos/PrestamosScreen";
 import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
-
+import AccountScreen from "../../features/account/AccountScreen";
 const TAB_ICON = {
   Home: "home",
   Mensajes: "chatbubble-outline",
@@ -51,6 +51,6 @@ export const AppNavigator = () => (
     <Tab.Screen name="Mensajes" component={MessageNavigator} />
     <Tab.Screen name="Préstamos" component={PrestamosScreen} />
     <Tab.Screen name="Anuncios" component={AnunciosScreen} />
-    <Tab.Screen name="Cuenta" component={HomeNavigator} />
+    <Tab.Screen name="Cuenta" component={AccountScreen} />
   </Tab.Navigator>
 );
