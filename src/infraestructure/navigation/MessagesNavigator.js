@@ -48,11 +48,18 @@ export const MessageNavigator = () => {
         name="BUZON DE MENSAJES"
         component={MessagesScreen}
       />
-    <MessageStack.Screen
+
+
+
+<MessageStack.Screen
   name="CHAT CON SOLICITANTE"
   component={MessagesDetailScreen}
   options={({ route, navigation }) => ({
-    headerTitle: route.params.name,
+    headerTitle: () => (
+      <Text style={[fonts.h3, { textTransform: "uppercase" }]}>
+        {route.params.name}
+      </Text>
+    ),
     headerLeft: () => (
       <TouchableOpacity
         style={{ marginLeft: 15 }}
@@ -63,6 +70,12 @@ export const MessageNavigator = () => {
     ),
   })}
 />
+
+
+
+
+
+
     </MessageStack.Navigator>
   );
 };
