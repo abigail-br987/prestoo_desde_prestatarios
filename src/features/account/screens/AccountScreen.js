@@ -5,7 +5,8 @@ import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ActionButton from "../../messages/components/ActionButton";
 import SettingsItem from "../components/SettingsItem";
-const AccountScreen = () => {
+
+const AccountScreen = ({ navigation }) => { 
   const { colors, fonts } = useTheme();
 
   return (
@@ -41,14 +42,13 @@ const AccountScreen = () => {
           </View>
         </View>
 
-
         <ActionButton
-        onPress={() => console.log("editar")}
-        iconName="create-outline"
-        text="Editar"
-        backgroundColor={colors.intensePrimaryAccent}
-        textColor={colors.textColor}
-      />
+          onPress={() => navigation.navigate("EDITAR PERFIL")}
+          iconName="create-outline"
+          text="Editar"
+          backgroundColor={colors.intensePrimaryAccent}
+          textColor={colors.textColor}
+        />
 
       </View>
 
@@ -59,7 +59,7 @@ const AccountScreen = () => {
       >
         <View
           style={{
-            backgroundColor: colors.baseColor,
+            backgroundColor: colors.intensePrimaryAccent,
             padding: 15,
             elevation: 5,
           }}
@@ -69,7 +69,7 @@ const AccountScreen = () => {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              elevation:5
+              elevation: 5,
             }}
           >
             <Text style={[fonts.h3]}>PREFERENCIAS</Text>
@@ -93,43 +93,35 @@ const AccountScreen = () => {
           <Text style={[fonts.subheading]}>PLAZO DE TIEMPO: 4 MESES </Text>
         </View>
       </View>
-      
 
+      <View
+        style={{
+          backgroundColor: colors.intensePrimaryAccent,
+          paddingVertical: 10,
+          paddingHorizontal: 15,
+          elevation: 5,
+          borderRadius: 5,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Text style={[fonts.h2]}>PUNTAJE: 50000</Text>
 
-          <View
-            style={{
-              backgroundColor: colors.primaryLightColor,
-              paddingVertical: 10,
-              paddingHorizontal: 15,
-              elevation: 5,
-              borderRadius: 5,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-            
-                <Text style={[fonts.h2]}>
-                  PUNTAJE: 50000
-                </Text>
-
-              <Ionicons name={"help-circle"} size={40} color={colors.textColor} />
-            </View>
-          </View>
-
-
+          <Ionicons name={"help-circle"} size={40} color={colors.textColor} />
+        </View>
+      </View>
 
       <SettingsItem
-          label="MÁS MÉTODOS NO TRADICIONALES"
-          iconName="diamond-outline"
-        />
-      
+        label="MÁS MÉTODOS NO TRADICIONALES"
+        iconName="diamond-outline"
+      />
+
       <View style={{ gap: 5 }}>
-      
         <SettingsItem
           label="PRIVACIDAD Y SEGURIDAD"
           iconName="shield-half-outline"
