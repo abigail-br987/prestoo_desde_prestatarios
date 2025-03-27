@@ -18,7 +18,7 @@ export const HomeScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: colors.primaryLightColor,
+        backgroundColor: colors.secondaryLightColor,
         borderColor: colors.textColor,
       }}
     >
