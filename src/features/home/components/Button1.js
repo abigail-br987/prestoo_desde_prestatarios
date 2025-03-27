@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, useTheme } from 'react-native-paper';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export const Button1 = ({ label, onPress }) => {
+export const Button1 = ({ label, onPress, icon }) => {
   const { colors } = useTheme();
 
   return (
@@ -11,8 +12,9 @@ export const Button1 = ({ label, onPress }) => {
       compact={true}
       style={{
         borderRadius: 5,
-        elevation:5
-      }}    
+        elevation: 5,
+      }}
+      icon={() => icon && <Ionicons name={icon} size={20} color={colors.textColor} />}
     >
       {label}
     </Button>
