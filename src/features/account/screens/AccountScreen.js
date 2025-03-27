@@ -5,9 +5,14 @@ import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ActionButton from "../../messages/components/ActionButton";
 import SettingsItem from "../components/SettingsItem";
-
-const AccountScreen = ({ navigation }) => { 
+import { TouchableOpacity } from "react-native";
+import { Alert } from "react-native";
+import Preferencias from "../components/Preferencias";
+const AccountScreen = ({ navigation }) => {
   const { colors, fonts } = useTheme();
+  const showAlert = () => {
+    Alert.alert("Información", "Este es un mensaje de ayuda.");
+  };
 
   return (
     <View
@@ -27,7 +32,7 @@ const AccountScreen = ({ navigation }) => {
       >
         <View style={{ flexDirection: "row", gap: 10 }}>
           <Image
-            source={{ uri: "https://randomuser.me/api/portraits/women/4.jpg" }}
+            source={{ uri: "https://randomuser.me/api/portraits/women/22.jpg" }}
             style={{
               width: 40,
               height: 40,
@@ -37,7 +42,7 @@ const AccountScreen = ({ navigation }) => {
           />
 
           <View>
-            <Text style={[fonts.subheading]}>Nombre Apellido</Text>
+            <Text style={[fonts.subheading]}>LUANA CÁCERES</Text>
             <Text style={[fonts.label2]}>+51 999 999 999</Text>
           </View>
         </View>
@@ -49,44 +54,16 @@ const AccountScreen = ({ navigation }) => {
           backgroundColor={colors.intensePrimaryAccent}
           textColor={colors.textColor}
         />
-
       </View>
 
-      <View
-        style={{
-          elevation: 5,
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: colors.intensePrimaryAccent,
-            padding: 15,
-            elevation: 5,
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              elevation: 5,
-            }}
-          >
-            <Text style={[fonts.h3]}>PREFERENCIAS</Text>
+      <Text style={[fonts.label2, {textAlign: "justify"}]}>
+        Completa tu perfil y nuestro algoritmo te conectará con prestamistas
+        según tus intereses. Recibirás notificaciones en la sección de Anuncios
+        cuando haya un match. Tus datos están protegidos con nosotros.
+      </Text>
 
-            <TouchableOpacity onPress={showAlert}>
-        <Ionicons name={"help-circle"} size={25} color={colors.textColor} />
-      </TouchableOpacity>
+      <Preferencias/>
 
-          </View>
-        </View>
-
-        <View style={{ padding: 15, backgroundColor: colors.baseColor }}>
-          <Text style={[fonts.subheading]}>MONTO: S/. 1000</Text>
-          <Text style={[fonts.subheading]}>TASA DE INTERÉS: 4% </Text>
-          <Text style={[fonts.subheading]}>PLAZO DE TIEMPO: 4 MESES </Text>
-        </View>
-      </View>
 
       <View
         style={{
@@ -106,7 +83,14 @@ const AccountScreen = ({ navigation }) => {
         >
           <Text style={[fonts.h2]}>PUNTAJE: 50000</Text>
 
+
+          <TouchableOpacity onPress={showAlert}>
           <Ionicons name={"help-circle"} size={40} color={colors.textColor} />
+      </TouchableOpacity>
+
+
+
+
         </View>
       </View>
 
