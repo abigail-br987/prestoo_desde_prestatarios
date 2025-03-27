@@ -1,16 +1,17 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View } from "react-native";
-import AccountConfigScreen from "../../features/account/screens/AccountConfigScreen";
-import AccountScreen from "../../features/account/screens/AccountScreen";
-import { Text } from "react-native-paper";
-import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useTheme } from "react-native-paper";
 
+import AccountScreen from "../../features/account/screens/AccountScreen";
+import AccountConfigScreen from "../../features/account/screens/AccountConfigScreen";
+
 const AccountStack = createStackNavigator();
-export const AccountNavigator = () => {
+
+const AccountNavigator = () => {
   const { colors, fonts } = useTheme();
+
   return (
     <AccountStack.Navigator
       screenOptions={{
@@ -21,24 +22,13 @@ export const AccountNavigator = () => {
         },
         headerBackTitleVisible: false,
         headerTitleAlign: "left",
-        headerTitle: () => (
-            <View style={{ flexDirection: "row", alignItems: "center", gap:10 }}>
-              <Text style={[fonts.h2]}>PERFIL</Text>
-              <Text style={[fonts.h3]}>(PATROCINADOR)</Text>
-            </View>
-          ),
-          headerRight: () => (
-            <View style={{ marginRight: 10 }}>
-              <Ionicons name={"settings-outline"} size={38} color={colors.textColor} />
-            </View>
-          ),
         headerLeft: () => (
           <Image
             source={{ uri: "https://randomuser.me/api/portraits/women/4.jpg" }}
             style={{
               width: 40,
               height: 40,
-              elevation:10,
+              elevation: 10,
               marginHorizontal: 10,
               borderRadius: 40,
             }}
@@ -46,10 +36,43 @@ export const AccountNavigator = () => {
         ),
       }}
     >
-      <AccountStack.Screen name="TU PERFIL" component={AccountScreen} />
+      <AccountStack.Screen
+        name="TU PERFIL"
+        component={AccountScreen}
+        options={({ navigation }) => ({
+          headerTitle: () => (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+              <Text style={[fonts.h2]}>PERFIL</Text>
+              <Text style={[fonts.h3]}>(PATROCINADOR)</Text>
+            </View>
+          ),
+          headerRight: () => (
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() => navigation.navigate("EDITAR PERFIL")}
+            >
+              <Ionicons name="create-outline" size={38} color={colors.textColor} />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      
       <AccountStack.Screen
         name="EDITAR PERFIL"
         component={AccountConfigScreen}
+        options={({ navigation }) => ({
+          headerTitle: () => (
+            <Text style={[fonts.h2]}>EDITAR PERFIL</Text>
+          ),
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 15 }}
+              onPress={() => navigation.goBack()}
+            >
+              <Ionicons name="arrow-back" size={24} color={colors.textColor} />
+            </TouchableOpacity>
+          ),
+        })}
       />
     </AccountStack.Navigator>
   );
