@@ -7,6 +7,8 @@ import { MessageNavigator } from "./MessagesNavigator";
 import AccountNavigator from "./AccountNavigator";
 import PrestamosNavigator from "./PrestamosNavigator";
 import AnunciosNavigator from "./AnunciosNavigator";
+import { Image } from "react-native";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -19,39 +21,51 @@ const TAB_ICON = {
 
 const createScreenOptions = ({ route }) => ({
   headerShown: false,
-  tabBarIcon: ({ focused, size, color }) => (
-    <Ionicons
-      name={TAB_ICON[route.name]}
-      size={focused ? 30 : 24}
-      color={theme.colors.textColor}
-    />
-  ),
-  tabBarLabelStyle: {
-    fontSize: 12,
-    fontFamily: "SofiaSansSemiCondensed-Bold",
-  },
   tabBarStyle: {
-    height: 55,
-    backgroundColor: theme.colors.baseColor,
-    elevation: 5,
-
+    paddingTop: 5, 
+    height: 65,
   },
-  tabBarItemStyle: {
-    height: 85,
-    borderRadius:5,
-  },
-
-  tabBarActiveTintColor: theme.colors.textColor,
+  tabBarActiveTintColor: theme.colors.thirdAccent,
   tabBarInactiveTintColor: theme.colors.textColor,
-  tabBarActiveBackgroundColor: theme.colors.primaryLightColor,
+
+  tabBarIcon: ({ focused, size, color }) => {
+    if (route.name === "Préstamos") {
+      return (
+        <Image
+          source={require("../../../assets/logo.jpg")}
+          style={{
+            width: focused ? 90 : 75, 
+            height: focused ? 80 : 75, 
+            position: "absolute",
+            bottom:-30,
+            borderRadius: 50,
+            
+          }}
+        />
+      );
+    }
+
+    return (
+      <Ionicons
+        name={TAB_ICON[route.name]}
+        size={focused ? 30 : 24}
+        color={focused ? theme.colors.thirdAccent : theme.colors.textColor}
+      />
+    );
+  },
 });
+
 
 
 export const AppNavigator = () => (
   <Tab.Navigator screenOptions={createScreenOptions}>
     <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Mensajes" component={MessageNavigator} />
-    <Tab.Screen name="Préstamos" component={PrestamosNavigator} />
+    <Tab.Screen 
+      name="Préstamos" 
+      component={PrestamosNavigator} 
+      options={{ tabBarLabel: "" }}
+    />
     <Tab.Screen name="Anuncios" component={AnunciosNavigator} />
     <Tab.Screen name="Cuenta" component={AccountNavigator} />
   </Tab.Navigator>
