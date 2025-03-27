@@ -9,7 +9,8 @@ import { MessageNavigator } from "./MessagesNavigator";
 import MessagesScreen from "../../features/messages/screens/MessagesScreen";
 import PrestamosScreen from "../../features/prestamos/PrestamosScreen";
 import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
-import AccountScreen from "../../features/account/AccountScreen";
+import AccountNavigator from "./AccountNavigator";
+import { useTheme } from "react-native-paper"
 const TAB_ICON = {
   Home: "home",
   Mensajes: "chatbubble-outline",
@@ -23,10 +24,8 @@ const createScreenOptions = ({ route }) => ({
   tabBarIcon: ({ focused, size, color }) => (
     <Ionicons
       name={TAB_ICON[route.name]}
-      size={focused ? 28 : 24}
-      color={
-        focused ? theme.colors.darkerPrimaryAccent : theme.colors.textColor
-      }
+      size={focused ? 30 : 24}
+      color={theme.colors.textColor}
     />
   ),
   tabBarLabelStyle: {
@@ -34,16 +33,22 @@ const createScreenOptions = ({ route }) => ({
     fontFamily: "SofiaSansSemiCondensed-Bold",
   },
   tabBarStyle: {
-    backgroundColor: theme.colors.primaryLightColor,
-    height: 60,
-    paddingBottom: 15,
-    paddingTop: 2,
-    borderTopWidth: 2,
-    borderColor: theme.colors.textColor,
+    height: 55,
+    backgroundColor: theme.colors.baseColor,
+    elevation: 5,
+
   },
-  tabBarActiveTintColor: theme.colors.darkerPrimaryAccent,
+  tabBarItemStyle: {
+    height: 85,
+    borderRadius:5,
+  },
+
+  tabBarActiveTintColor: theme.colors.textColor,
   tabBarInactiveTintColor: theme.colors.textColor,
+  tabBarActiveBackgroundColor: theme.colors.primaryLightColor,
 });
+
+
 
 export const AppNavigator = () => (
   <Tab.Navigator screenOptions={createScreenOptions}>
@@ -51,6 +56,6 @@ export const AppNavigator = () => (
     <Tab.Screen name="Mensajes" component={MessageNavigator} />
     <Tab.Screen name="Préstamos" component={PrestamosScreen} />
     <Tab.Screen name="Anuncios" component={AnunciosScreen} />
-    <Tab.Screen name="Cuenta" component={AccountScreen} />
+    <Tab.Screen name="Cuenta" component={AccountNavigator} />
   </Tab.Navigator>
 );
