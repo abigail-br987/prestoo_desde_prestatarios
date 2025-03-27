@@ -5,14 +5,14 @@ export const theme = {
   colors: {
     ...DefaultTheme.colors,
     baseColor: "#fafaf2", 
-    darkerBaseColor: "#C4CEC4",
+    darkerBaseColor: "#f2f1e4",
     primaryLightColor: "#D1FBF9",
     primaryAccent:"#00E7A5",
     secondAccent:"#9435DD",
     thirdAccent:"#FFAA01",
     textColor:"#053654",
     lightTextColor:"#38677C",
-    secondaryLightColor:"#ffdfa0",
+    secondaryLightColor:"#ffd079",
     intensePrimaryAccent:"#6FF0E5",
   },
   fonts: {
