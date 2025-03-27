@@ -63,17 +63,16 @@ export const MessageNavigator = () => {
     headerLeft: () => (
       <TouchableOpacity
         style={{ marginLeft: 15 }}
-        onPress={() => navigation.goBack()}
-      >
+        onPress={() =>
+          navigation.navigate("Mensajes", {
+            screen: "BUZON DE MENSAJES",
+          })
+        }      >
         <Ionicons name="arrow-back" size={24} color={colors.textColor} />
       </TouchableOpacity>
     ),
   })}
 />
-
-
-
-
 
 
     </MessageStack.Navigator>
