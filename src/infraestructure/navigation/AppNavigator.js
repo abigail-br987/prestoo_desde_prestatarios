@@ -7,7 +7,7 @@ import { MessageNavigator } from "./MessagesNavigator";
 import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
 import AccountNavigator from "./AccountNavigator";
 import PrestamosNavigator from "./PrestamosNavigator";
-
+import AnunciosNavigator from "./AnunciosNavigator";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -53,7 +53,7 @@ export const AppNavigator = () => (
     <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Mensajes" component={MessageNavigator} />
     <Tab.Screen name="Préstamos" component={PrestamosNavigator} />
-    <Tab.Screen name="Anuncios" component={AnunciosScreen} />
+    <Tab.Screen name="Anuncios" component={AnunciosNavigator} />
     <Tab.Screen name="Cuenta" component={AccountNavigator} />
   </Tab.Navigator>
 );
