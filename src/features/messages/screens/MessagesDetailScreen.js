@@ -6,6 +6,8 @@ import ActionButton from "../components/ActionButton";
 import ProfileHeader from "../components/ProfileHeader";
 import ChatBubble from "../components/ChatBubble";
 import MessageInput from "../components/MessageInput";
+import { Button } from "react-native-paper";
+import { Button1 } from "../../home/components/Button1";
 
 export const MessagesDetailScreen = ({ route }) => {
   const { colors } = useTheme();
@@ -28,7 +30,7 @@ export const MessagesDetailScreen = ({ route }) => {
     <View
       style={{
         flex: 1,
-        padding: 20,
+        padding: 15,
         backgroundColor: colors.baseColor,
         gap: 10,
       }}
@@ -44,25 +46,20 @@ export const MessagesDetailScreen = ({ route }) => {
       />
 
       <View
-        style={{ flexDirection: "row", justifyContent: "flex-start", gap: 10 }}
+        style={{ flexDirection: "row", gap:10}}
       >
-        <ActionButton
-          onPress={() => console.log("alert")}
-          iconName="star-outline"
-          text="Recomendar"
-          backgroundColor={colors.thirdAccent}
-          textColor={colors.textColor}
-        />
-        <ActionButton
-          onPress={() => console.log("alert")}
-          iconName="alert-circle-outline"
-          text="Reportar"
-          backgroundColor={colors.customRed}
-          textColor={colors.textColor}
-        />
+        <Button1 label="Recomendar" icon={"heart-outline"} onPress={() => console.log("Recomendar")} />
+        <Button1 label="Reportar" icon={"warning-outline"} onPress={() => console.log("Reportar")} />
+
       </View>
 
-      <ScrollView style={{ flex: 1, marginTop: 10 }}>
+      <ScrollView
+        style={{
+          flex: 1,
+          backgroundColor: colors.darkerBaseColor,
+          padding: 10,
+        }}
+      >
         {chatMessages.map((msg, id) => {
           const isUser = msg.sender === "Tú";
           return (
