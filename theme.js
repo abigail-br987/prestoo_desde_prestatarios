@@ -14,6 +14,7 @@ export const theme = {
     lightTextColor:"#38677C",
     secondaryLightColor:"#ffd079",
     intensePrimaryAccent:"#6FF0E5",
+    customRed:"#fc6929",
   },
   fonts: {
     default: {
