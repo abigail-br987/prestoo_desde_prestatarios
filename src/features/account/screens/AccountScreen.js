@@ -74,16 +74,10 @@ const AccountScreen = ({ navigation }) => {
           >
             <Text style={[fonts.h3]}>PREFERENCIAS</Text>
 
-            <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
-            >
-              <Text style={[fonts.subheading]}>Más Detalles</Text>
-              <Ionicons
-                name={"caret-forward-outline"}
-                size={20}
-                color={"#053654"}
-              />
-            </View>
+            <TouchableOpacity onPress={showAlert}>
+        <Ionicons name={"help-circle"} size={25} color={colors.textColor} />
+      </TouchableOpacity>
+
           </View>
         </View>
 
