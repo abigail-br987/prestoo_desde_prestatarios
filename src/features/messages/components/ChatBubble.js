@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Image } from "react-native";
 import { useTheme } from "react-native-paper";
 
-const ChatBubble = ({ msg, profile, isUser }) => {
+const ChatBubble = ({ index, msg, profile, isUser }) => {
 
   const { colors, fonts } = useTheme();
 
