@@ -5,10 +5,12 @@ import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 import { Image } from "react-native";
 import IconButton from "../components/IconButton";
+import { useSavedProfiles } from "../../../utils/SavedProfilesContext";
 
 export const HomeDetailScreen = ({ route, navigation }) => {
   const { profile } = route.params;
   const { colors, fonts } = useTheme();
+  const { savedProfiles, toggleSave } = useSavedProfiles();
 
   return (
     <View
@@ -39,8 +41,22 @@ export const HomeDetailScreen = ({ route, navigation }) => {
               alignItems: "center",
             }}
           >
+
+            <View style={{flexDirection: "row", alignItems: "center", gap:10,}}>
+            <IconButton
+                onPress={() => toggleSave(profile.id)}
+                iconName={
+                  savedProfiles[profile.id] ? "bookmark" : "bookmark-outline"
+                }
+                style={{}}
+                color={colors.primaryLightColor}
+              />
+
             <Text style={[fonts.h3]}>{profile.name}</Text>
 
+
+            </View>
+            
             <View
               style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
             >
