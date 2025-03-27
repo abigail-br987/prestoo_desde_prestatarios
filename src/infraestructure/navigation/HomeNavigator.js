@@ -8,22 +8,42 @@ import { StyleSheet } from "react-native";
 import { Text } from "react-native";
 import { useTheme } from "react-native-paper";
 import { Button1 } from "../../features/home/components/Button1";
-
+import { Ionicons } from "@expo/vector-icons";
 
 const HomeStack = createStackNavigator();
 export const HomeNavigator = () => {
+  const { colors, fonts } = useTheme();
+
   return (
-    <HomeStack.Navigator screenOptions={{ headerShown: true }}>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: colors.baseColor,
+          elevation: 10,
+        },
+      }}
+    >
       <HomeStack.Screen
         name="SOLICITANTES"
         component={HomeScreen}
         options={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: colors.baseColor,
+            elevation: 10,
+          },
+
+          headerTitle: () => <Text style={[fonts.h2]}>SOLICITANTES</Text>,
+
           headerRight: () => (
-            <View style={{
-              flexDirection: "row",
-              marginRight: 10,
-              gap:10,
-            }}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginRight: 10,
+                gap: 10,
+              }}
+            >
               <Button1
                 label="Filtros"
                 onPress={() => console.log("Filtros clicked")}
@@ -43,4 +63,3 @@ export const HomeNavigator = () => {
     </HomeStack.Navigator>
   );
 };
-
