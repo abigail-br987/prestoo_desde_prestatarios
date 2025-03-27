@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
 import { useTheme } from "react-native-paper";
+import { Ionicons } from "@expo/vector-icons";
+
 
 const prestamos = [
   {
@@ -39,7 +41,33 @@ const PrestamoItem = ({ prestamo }) => {
         elevation: 5,
       }}
     >
-      <Text style={[fonts.h3]}>{prestamo.prestatario}</Text>
+
+
+      <View
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Text style={[fonts.h3]}>{prestamo.prestatario}</Text>
+
+            <View
+              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
+            >
+              <Text style={[fonts.subheading]}>Más Detalles</Text>
+              <Ionicons
+                name={"caret-forward-outline"}
+                size={20}
+                color={"#053654"}
+              />
+            </View>
+          </View>
+        </View>
+
+
       <Text style={[fonts.label2]}>💰 S/{prestamo.monto}</Text>
       <Text style={[fonts.label2]}>
         📅 Vence el {prestamo.fechaVencimiento}
