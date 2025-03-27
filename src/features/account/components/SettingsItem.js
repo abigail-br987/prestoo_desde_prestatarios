@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "react-native-paper";
 
 const SettingsItem = ({ label, iconName }) => {
-  const { colors } = useTheme();
+  const { colors, fonts } = useTheme();
 
   return (
     <View
@@ -25,7 +25,7 @@ const SettingsItem = ({ label, iconName }) => {
       >
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
           <Ionicons name={iconName} size={20} color={colors.textColor} />
-          <Text style={{ fontSize: 16, fontWeight: "bold", color: colors.textColor }}>
+          <Text style={[fonts.subheading]}>
             {label}
           </Text>
         </View>
