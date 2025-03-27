@@ -35,7 +35,7 @@ const ChatBubble = ({ index, msg, profile, isUser }) => {
         padding: 10,
         borderRadius: 10,
         elevation: 5,
-        backgroundColor: colors.darkerBaseColor,
+        backgroundColor: colors.baseColor,
       }}
     >
       <Text style={[fonts.label2]}>{msg.text}</Text>
