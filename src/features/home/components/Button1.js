@@ -6,14 +6,12 @@ export const Button1 = ({ label, onPress }) => {
 
   return (
     <Button
-      mode="outlined"
       onPress={onPress}
       textColor={colors.textColor}
       compact={true}
       style={{
         borderRadius: 5,
-        borderWidth: 2,
-        borderColor: colors.textColor
+        elevation:5
       }}    
     >
       {label}
