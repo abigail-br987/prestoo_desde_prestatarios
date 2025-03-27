@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Image, ScrollView, TextInput } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useTheme } from "react-native-paper";
-import { Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import { profiles, messages } from "../../../utils/DummyData";
 import ActionButton from "../components/ActionButton";
 import ProfileHeader from "../components/ProfileHeader";
 import ChatBubble from "../components/ChatBubble";
+import MessageInput from "../components/MessageInput";
 
 export const MessagesDetailScreen = ({ route }) => {
-  const { colors, fonts } = useTheme();
-  const navigation = useNavigation();
+  const { colors } = useTheme();
   const { profileId } = route.params;
 
   const profile = profiles.find((p) => p.id === profileId);
@@ -65,46 +63,25 @@ export const MessagesDetailScreen = ({ route }) => {
       </View>
 
       <ScrollView style={{ flex: 1, marginTop: 10 }}>
-        {chatMessages.map((msg, index) => {
+        {chatMessages.map((msg, id) => {
           const isUser = msg.sender === "Tú";
-          return <ChatBubble key={index} msg={msg} profile={profile} isUser={isUser} />;
+          return (
+            <ChatBubble
+              key={id}
+              index={id}
+              msg={msg}
+              profile={profile}
+              isUser={isUser}
+            />
+          );
         })}
       </ScrollView>
 
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          padding: 10,
-          backgroundColor: colors.baseColor,
-          borderTopWidth: 1,
-          borderTopColor: colors.borderColor,
-        }}
-      >
-        <TextInput
-          value={message}
-          onChangeText={setMessage}
-          placeholder="Escribe tu mensaje..."
-          placeholderTextColor={colors.textColor}
-          style={{
-            flex: 1,
-            backgroundColor: colors.lightBaseColor,
-            borderRadius: 20,
-            paddingHorizontal: 15,
-            paddingVertical: 8,
-            marginRight: 10,
-            color: colors.textColor,
-          }}
-        />
-        <TouchableOpacity onPress={handleSendMessage}>
-          <Ionicons
-            name="send"
-            size={25}
-            color={colors.textColor}
-            style={{ padding: 5 }}
-          />
-        </TouchableOpacity>
-      </View>
+      <MessageInput
+        message={message}
+        setMessage={setMessage}
+        handleSendMessage={handleSendMessage}
+      />
     </View>
   );
 };
