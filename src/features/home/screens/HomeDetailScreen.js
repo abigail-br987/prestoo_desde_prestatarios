@@ -81,7 +81,7 @@ export const HomeDetailScreen = ({ route, navigation }) => {
             justifyContent: "space-between",
           }}
         >
-          <Text style={[fonts.h3]}>{profile.name}</Text>
+          <Text style={[fonts.h2]}>{profile.name}</Text>
 
           <View
             style={{
