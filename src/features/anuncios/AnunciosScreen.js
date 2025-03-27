@@ -60,11 +60,7 @@ const AnunciosScreen = () => {
         padding: 20,
       }}
     >
-      <Text
-        style={[fonts.h2]}
-      >
-        📢 Anuncios
-      </Text>
+      <Text style={[fonts.h2]}>📢 Anuncios</Text>
       <FlatList
         data={anuncios}
         keyExtractor={(item) => item.id}
