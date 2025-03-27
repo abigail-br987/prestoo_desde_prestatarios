@@ -29,7 +29,7 @@ export const MessageNavigator = () => {
         headerTitle: () => (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
             <Text style={[fonts.h2]}>BUZÓN</Text>
-            <Text style={[fonts.h3]}>(SOLICITANTES)</Text>
+            <Text style={[fonts.h3]}>(PRESTAMISTAS)</Text>
           </View>
         ),
 
