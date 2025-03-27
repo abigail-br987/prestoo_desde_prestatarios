@@ -12,15 +12,15 @@ import { profiles } from "../../../utils/DummyData";
 import IconButton from "../components/IconButton";
 import { Pressable } from "react-native";
 import { useState } from "react";
+
 export const HomeScreen = ({ navigation }) => {
   const { colors, fonts } = useTheme();
   const { savedProfiles, toggleSave } = useSavedProfiles();
   const [showOnlySaved, setShowOnlySaved] = useState(false);
 
   const filteredProfiles = showOnlySaved
-  ? profiles.filter((profile) => savedProfiles[profile.id])
-  : profiles;
-
+    ? profiles.filter((profile) => savedProfiles[profile.id])
+    : profiles;
 
   return (
     <View
@@ -30,14 +30,13 @@ export const HomeScreen = ({ navigation }) => {
         borderColor: colors.textColor,
       }}
     >
-
       <TouchableOpacity
         onPress={() => setShowOnlySaved((prev) => !prev)}
         style={{
           padding: 10,
           backgroundColor: colors.baseColor,
           alignItems: "center",
-          elevation:5,
+          elevation: 5,
           borderRadius: 5,
         }}
       >
@@ -45,7 +44,6 @@ export const HomeScreen = ({ navigation }) => {
           {showOnlySaved ? "Mostrar todos" : "Mostrar guardados"}
         </Text>
       </TouchableOpacity>
-
 
       <FlatList
         data={filteredProfiles}
@@ -76,6 +74,7 @@ export const HomeScreen = ({ navigation }) => {
                 borderTopRightRadius: 30,
                 borderRadius: 5,
                 padding: 15,
+                gap:10,
                 alignItems: "center",
                 paddingTop: 50,
               }}
@@ -85,14 +84,14 @@ export const HomeScreen = ({ navigation }) => {
                 iconName={
                   savedProfiles[item.id] ? "bookmark" : "bookmark-outline"
                 }
-                style={{ position: "absolute", top: 10, right: 15 }}
+                style={{ position: "absolute", top: -5, right: 5 }}
                 color={colors.primaryLightColor}
               />
 
               <IconButton
                 onPress={() =>
                   navigation.navigate("Mensajes", {
-                    screen: "CHAT CON SOLICITANTE",
+                    screen: "CHAT CON PRESTAMISTA",
                     params: {
                       profileId: item.id,
                       name: item.name,
@@ -100,7 +99,7 @@ export const HomeScreen = ({ navigation }) => {
                   })
                 }
                 iconName="chatbubble-ellipses-outline"
-                style={{ position: "absolute", top: 10, left: 15 }}
+                style={{ position: "absolute", top: -5, left: 5 }}
                 color={colors.primaryLightColor}
               />
 
@@ -117,11 +116,48 @@ export const HomeScreen = ({ navigation }) => {
                 }}
               />
 
-              <Text style={[fonts.h3]}>{item.name}</Text>
-              <Text style={[fonts.label2]}>{item.age} años</Text>
-              <Text style={[fonts.label2]}>
-                Necesita {item.requestedAmount}
+              <Text style={[fonts.h3, { textAlign: "center" }]}>
+                {item.name}
               </Text>
+              
+              <View style={{gap:5}}>
+              <Text style={[fonts.subheading, {fontSize:13}]}>Intereses:</Text>
+
+              <View
+                style={{
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  gap: 5,
+                  width: "100%",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                {item.investmentInterests.map((tag, index) => (
+                  <View
+                    key={index}
+                    style={{
+                      backgroundColor: colors.primaryLightColor,
+                      paddingHorizontal: 10,
+                      paddingVertical: 3,
+                      borderRadius: 5,
+                      flexGrow: 1, 
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text
+                      style={[
+                        fonts.label2,
+                        { fontSize: 12, textAlign: "center" },
+                      ]}
+                    >
+                      {tag}
+                    </Text>
+                  </View>
+                ))}
+              </View>
+
+              </View>
+
             </TouchableOpacity>
           </View>
         )}
