@@ -18,20 +18,15 @@ export const HomeScreen = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: colors.intensePrimaryAccent,
-        marginLeft: 10,
-        marginRight: 10,
+        backgroundColor: colors.primaryLightColor,
         borderColor: colors.textColor,
-        borderLeftWidth: 2,
-        borderRightWidth: 2,
-        borderTopWidth: 2,
       }}
     >
       <FlatList
         data={profiles}
         keyExtractor={(item) => item.id}
         numColumns={2}
-        style={{ padding: 5 }}
+        style={{ padding: 10 }}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
@@ -40,16 +35,16 @@ export const HomeScreen = ({ navigation }) => {
             style={{
               flex: 1,
               backgroundColor: colors.baseColor,
-              borderWidth: 2,
               borderColor: colors.textColor,
               borderRadius: 5,
               marginTop: 50,
               marginHorizontal: 5,
-              padding: 10,
+              padding: 15,
               alignItems: "center",
               position: "relative",
               paddingTop: 50,
-            }}
+              elevation: 10,
+                      }}
           >
             <TouchableOpacity
               onPress={() => toggleSave(item.id)}
@@ -72,9 +67,8 @@ export const HomeScreen = ({ navigation }) => {
               style={{
                 width: 80,
                 height: 80,
-                borderColor: fonts.textColor,
-                borderWidth: 2,
-                borderRadius: 40,
+                elevation:5,
+                borderRadius:40,
                 position: "absolute",
                 top: -40,
                 zIndex: 1,
