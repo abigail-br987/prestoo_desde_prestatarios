@@ -23,12 +23,12 @@ export const theme = {
     },
     h1: {
       fontFamily: "SofiaSansSemiCondensed-Black", 
-      fontSize: 64,
+      fontSize: 40,
       color: "#053654",
     },
     h2: {
       fontFamily: "SofiaSansSemiCondensed-Black", 
-      fontSize: 36,
+      fontSize: 30,
       letterSpacing: 1.5,
       color: "#053654",
     },
@@ -40,7 +40,7 @@ export const theme = {
     },
     subheading: {
       fontFamily: "SofiaSansSemiCondensed-BoldItalic", 
-      fontSize: 20,
+      fontSize: 18,
       color: "#053654",
     },
     label1: {
