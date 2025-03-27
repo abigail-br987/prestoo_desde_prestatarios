@@ -34,7 +34,7 @@ export const HomeNavigator = () => {
             elevation: 10,
           },
 
-          headerTitle: () => <Text style={[fonts.h2]}>SOLICITANTES</Text>,
+          headerTitle: () => <Text style={[fonts.h2]}>PRESTATARIOS</Text>,
 
           headerRight: () => (
             <View
