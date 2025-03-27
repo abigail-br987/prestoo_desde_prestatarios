@@ -26,19 +26,25 @@ export const HomeDetailScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     navigation.setOptions({
-      title: `${profile.name} (SOLICITANTE)`,
-      headerTitleStyle: {
-        fontFamily: fonts?.label1?.fontFamily || "System",
-      },
+      headerTitle: () => (
+        <View>
+          <Text
+            style={[fonts.h2]}
+          >
+            {profile.name}
+          </Text>
+        </View>
+      ),
     });
-  }, [navigation, profile.name, fonts]);
+  }, [navigation, profile.name, fonts, colors.textColor]);
+  
 
   return (
-    <View style={{ flex: 1, padding: 20, gap: 25 }}>
+    <View style={{ flex: 1, padding: 20, gap: 25, backgroundColor: colors.secondaryLightColor }}>
       <View
         style={{
           flexDirection: "row",
-          gap: 10,
+          gap: 20,
           alignItems: "center",
           justifyContent: "space-between",
         }}
