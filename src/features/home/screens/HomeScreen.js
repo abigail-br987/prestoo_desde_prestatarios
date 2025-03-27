@@ -11,10 +11,16 @@ import { Ionicons } from "@expo/vector-icons";
 import { profiles } from "../../../utils/DummyData";
 import IconButton from "../components/IconButton";
 import { Pressable } from "react-native";
-
+import { useState } from "react";
 export const HomeScreen = ({ navigation }) => {
   const { colors, fonts } = useTheme();
   const { savedProfiles, toggleSave } = useSavedProfiles();
+  const [showOnlySaved, setShowOnlySaved] = useState(false);
+
+  const filteredProfiles = showOnlySaved
+  ? profiles.filter((profile) => savedProfiles[profile.id])
+  : profiles;
+
 
   return (
     <View
@@ -24,8 +30,25 @@ export const HomeScreen = ({ navigation }) => {
         borderColor: colors.textColor,
       }}
     >
+
+      <TouchableOpacity
+        onPress={() => setShowOnlySaved((prev) => !prev)}
+        style={{
+          padding: 10,
+          backgroundColor: colors.baseColor,
+          alignItems: "center",
+          elevation:5,
+          borderRadius: 5,
+        }}
+      >
+        <Text style={[fonts.subheading]}>
+          {showOnlySaved ? "Mostrar todos" : "Mostrar guardados"}
+        </Text>
+      </TouchableOpacity>
+
+
       <FlatList
-        data={profiles}
+        data={filteredProfiles}
         keyExtractor={(item) => item.id}
         numColumns={2}
         style={{ padding: 10 }}
@@ -96,7 +119,6 @@ export const HomeScreen = ({ navigation }) => {
 
               <Text style={[fonts.h3]}>{item.name}</Text>
               <Text style={[fonts.label2]}>{item.age} años</Text>
-              <Text style={[fonts.label2]}>{item.status}</Text>
               <Text style={[fonts.label2]}>
                 Necesita {item.requestedAmount}
               </Text>
