@@ -32,6 +32,7 @@ export const MessagesScreen = ({ navigation }) => {
       style={{
         flex: 1,
         paddingHorizontal: 15,
+        paddingVertical:15,
         backgroundColor: colors.primaryLightColor,
       }}
     >
