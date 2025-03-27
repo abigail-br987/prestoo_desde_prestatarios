@@ -58,6 +58,16 @@ export const HomeNavigator = () => {
       />
       <HomeStack.Screen
         name="INFO DEL SOLICITANTE"
+
+        screenOptions={{
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: colors.baseColor,
+            elevation: 10,
+          },
+        }}
+
+        
         component={HomeDetailScreen}
       />
     </HomeStack.Navigator>
