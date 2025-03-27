@@ -12,6 +12,7 @@ export const theme = {
     thirdAccent:"#FFAA01",
     textColor:"#053654",
     lightTextColor:"#38677C",
+    secondaryLightColor:"#ffdfa0",
     intensePrimaryAccent:"#6FF0E5",
   },
   fonts: {
