@@ -1,16 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { View, Text } from "react-native";
 import { theme } from "../../../theme";
 import { HomeNavigator } from "./HomeNavigator";
-const Tab = createBottomTabNavigator();
 import { MessageNavigator } from "./MessagesNavigator";
-import MessagesScreen from "../../features/messages/screens/MessagesScreen";
-import PrestamosScreen from "../../features/prestamos/PrestamosScreen";
 import AnunciosScreen from "../../features/anuncios/AnunciosScreen";
 import AccountNavigator from "./AccountNavigator";
-import { useTheme } from "react-native-paper"
+import PrestamosNavigator from "./PrestamosNavigator";
+
+const Tab = createBottomTabNavigator();
+
 const TAB_ICON = {
   Home: "home",
   Mensajes: "chatbubble-outline",
@@ -49,12 +48,11 @@ const createScreenOptions = ({ route }) => ({
 });
 
 
-
 export const AppNavigator = () => (
   <Tab.Navigator screenOptions={createScreenOptions}>
     <Tab.Screen name="Home" component={HomeNavigator} />
     <Tab.Screen name="Mensajes" component={MessageNavigator} />
-    <Tab.Screen name="Préstamos" component={PrestamosScreen} />
+    <Tab.Screen name="Préstamos" component={PrestamosNavigator} />
     <Tab.Screen name="Anuncios" component={AnunciosScreen} />
     <Tab.Screen name="Cuenta" component={AccountNavigator} />
   </Tab.Navigator>
