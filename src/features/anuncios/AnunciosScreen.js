@@ -56,11 +56,10 @@ const AnunciosScreen = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: colors.baseColor,
+        backgroundColor: colors.primaryLightColor,
         padding: 20,
       }}
     >
-      <Text style={[fonts.h2]}>📢 Anuncios</Text>
       <FlatList
         data={anuncios}
         keyExtractor={(item) => item.id}
