@@ -57,12 +57,7 @@ export const HomeDetailScreen = ({ route, navigation }) => {
 
             </View>
             
-            <View
-              style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
-            >
-              <Text style={[fonts.subheading]}>PUNTAJE</Text>
-              <Text style={[fonts.h2]}>{profile.score}</Text>
-            </View>
+
           </View>
 
           <View
@@ -99,47 +94,16 @@ export const HomeDetailScreen = ({ route, navigation }) => {
           style={{ padding: 15, backgroundColor: colors.baseColor, gap: 10 }}
         >
           <Text style={[fonts.subheading]}>
-            MONTO SOLICITADO: {profile.requestedAmount}
-          </Text>
-          <Text style={[fonts.subheading]}>
             TASA DE INTERÉS PREFERIDA: {profile.interestRate}{" "}
           </Text>
           <Text style={[fonts.subheading]}>
             TIEMPO DE DEVOLUCIÓN: {profile.repaymentTime}{" "}
           </Text>
-          <Text style={[fonts.subheading]}>MOTIVO DEL PRÉSTAMO:</Text>
 
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-            {profile.loanReasonTags.map((tag, index) => (
-              <View
-                key={index}
-                style={{
-                  backgroundColor: colors.primaryLightColor,
-                  color: colors.textColor,
-                  paddingHorizontal: 10,
-                  paddingVertical: 5,
-                  borderRadius: 5,
-                }}
-              >
-                <Text style={[fonts.label2]}>{tag}</Text>
-              </View>
-            ))}
-          </View>
 
-          {profile.loanExplanation && (
-            <Text style={[fonts.label2]}>{profile.loanExplanation}</Text>
-          )}
         </View>
       </View>
 
-      <View style={{ gap: 15 }}>
-        <Text style={[fonts.h3]}>HISTORIAL RECIENTE:</Text>
-        {profile.loanHistory.map((loan, index) => (
-          <Text key={index} style={[fonts.label2]}>
-            - {loan}
-          </Text>
-        ))}
-      </View>
     </View>
   );
 };

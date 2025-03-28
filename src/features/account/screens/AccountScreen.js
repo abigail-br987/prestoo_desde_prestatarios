@@ -64,7 +64,6 @@ const AccountScreen = ({ navigation }) => {
 
       <Preferencias/>
 
-
       <View
         style={{
           backgroundColor: colors.intensePrimaryAccent,
