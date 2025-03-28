@@ -132,6 +132,10 @@ export const profiles = [
       profileImage: "https://randomuser.me/api/portraits/women/21.jpg"
   }
 ];
+
+
+
+
 export const messages = [
     {
       id: "m1",
@@ -147,6 +151,86 @@ export const messages = [
       messages: [
         { sender: "María López", text: "¿Me podrías dar más detalles?", timestamp: "11:00 AM" },
         { sender: "Tú", text: "Por supuesto, te explico...", timestamp: "11:10 AM" },
+      ],
+    },
+    {
+      id: "m3",
+      profileId: "3",
+      messages: [
+        { sender: "Pedro Martínez", text: "Estoy interesado en tu propuesta.", timestamp: "9:30 AM" },
+        { sender: "Tú", text: "Genial, te paso más información.", timestamp: "9:40 AM" },
+      ],
+    },
+    {
+      id: "m4",
+      profileId: "4",
+      messages: [
+        { sender: "Ana Ramírez", text: "Me gustaría saber más sobre el proyecto.", timestamp: "3:15 PM" },
+        { sender: "Tú", text: "¡Claro! Te comparto los detalles.", timestamp: "3:20 PM" },
+      ],
+    },
+    {
+      id: "m5",
+      profileId: "5",
+      messages: [
+        { sender: "Carlos López", text: "¿Cuándo podemos reunirnos?", timestamp: "1:00 PM" },
+        { sender: "Tú", text: "¿Te parece bien el viernes a las 4 PM?", timestamp: "1:05 PM" },
+      ],
+    },
+    {
+      id: "m6",
+      profileId: "6",
+      messages: [
+        { sender: "Andrea Gutiérrez", text: "Tengo una idea que quiero compartir contigo.", timestamp: "5:45 PM" },
+        { sender: "Tú", text: "¡Me encantaría escucharla!", timestamp: "5:50 PM" },
+      ],
+    },
+    {
+      id: "m7",
+      profileId: "7",
+      messages: [
+        { sender: "Martín Álvarez", text: "¿Tienes experiencia en inversiones energéticas?", timestamp: "8:10 AM" },
+        { sender: "Tú", text: "Sí, he trabajado en varios proyectos de eficiencia energética.", timestamp: "8:15 AM" },
+      ],
+    },
+    {
+      id: "m8",
+      profileId: "8",
+      messages: [
+        { sender: "Sofía Delgado", text: "Quiero invertir en salud mental, ¿qué opinas?", timestamp: "6:30 PM" },
+        { sender: "Tú", text: "Es un sector clave, hay mucho potencial de impacto.", timestamp: "6:35 PM" },
+      ],
+    },
+    {
+      id: "m9",
+      profileId: "9",
+      messages: [
+        { sender: "Rodrigo Méndez", text: "¿Tienes contactos en la industria gastronómica?", timestamp: "7:00 PM" },
+        { sender: "Tú", text: "Sí, puedo ponerte en contacto con algunos chefs.", timestamp: "7:05 PM" },
+      ],
+    },
+    {
+      id: "m10",
+      profileId: "10",
+      messages: [
+        { sender: "Camila Torres", text: "Quisiera aprender más sobre educación financiera.", timestamp: "2:00 PM" },
+        { sender: "Tú", text: "¡Con gusto! Te recomiendo algunos recursos.", timestamp: "2:05 PM" },
+      ],
+    },
+    {
+      id: "m11",
+      profileId: "11",
+      messages: [
+        { sender: "Gonzalo Herrera", text: "Estoy explorando oportunidades en IA.", timestamp: "4:30 PM" },
+        { sender: "Tú", text: "Interesante, ¿tienes alguna idea en mente?", timestamp: "4:35 PM" },
+      ],
+    },
+    {
+      id: "m12",
+      profileId: "12",
+      messages: [
+        { sender: "Valeria Pérez", text: "¿Cómo puedo hacer mi negocio más sostenible?", timestamp: "9:50 AM" },
+        { sender: "Tú", text: "Podemos discutir estrategias de impacto social.", timestamp: "9:55 AM" },
       ],
     },
   ];
