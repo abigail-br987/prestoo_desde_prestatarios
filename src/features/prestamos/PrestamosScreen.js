@@ -8,7 +8,7 @@ const prestamos = [
   {
     id: "1",
     prestatario: "Carlos Gómez",
-    monto: 1050,
+    monto: 150,
     fechaVencimiento: "10 de abril de 2025",
     estado: "A tiempo",
   },
