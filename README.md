@@ -12,9 +12,9 @@ Prestoo es la nueva aplicación de BCP diseñada para conectar prestatarios con 
 
 ## Tecnologías Utilizadas
 
-React Native - Desarrollo de la app móvil
-Expo - Framework para facilitar el desarrollo
-React Navigation - Manejo de navegación
+- React Native - Desarrollo de la app móvil
+- Expo - Framework para facilitar el desarrollo
+- React Navigation - Manejo de navegación
 
 ## Instalación y Configuración
 
@@ -29,8 +29,6 @@ cd nombre-del-repositorio
 
 **Instalar dependencias**
 npm install  
-# o  
-yarn install  
 
 
 ## ¿Cómo Funciona?
