@@ -24,8 +24,8 @@ Expo CLI
 Git
 
 **Clonar el repositorio**
-git clone
-cd nombre-del-repositorio  
+git clone https://github.com/abigail-br987/prestoo_desde_prestatarios.git
+cd prestoo_desde_prestatarios
 
 **Instalar dependencias**
 npm install  
