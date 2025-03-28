@@ -1,13 +1,14 @@
+
 export const profiles = [
   {
       id: "1",
       name: "Javier Ríos",
-      age: 45,
+      age: 27,
       status: "Empresario",
       interestRate: "5.5%",
-      repaymentTime: "12-36 meses",
+      repaymentTime: "10-12 meses",
       investmentInterests: ["Tecnología", "Negocios", "Educación"],
-      shortDescription: "Inversionista con experiencia en startups tecnológicas.",
+      shortDescription: "Proyecto en Educación",
       profileImage: "https://randomuser.me/api/portraits/men/10.jpg"
   },
   {
@@ -16,9 +17,9 @@ export const profiles = [
       age: 38,
       status: "Abogada",
       interestRate: "6%",
-      repaymentTime: "24-48 meses",
+      repaymentTime: "6-8 meses",
       investmentInterests: ["Salud", "Educación", "Inmobiliario"],
-      shortDescription: "Apasionada por proyectos que generan impacto social.",
+      shortDescription: "Proyecto Social",
       profileImage: "https://randomuser.me/api/portraits/women/11.jpg"
   },
   {
@@ -27,7 +28,7 @@ export const profiles = [
       age: 50,
       status: "Contador Público",
       interestRate: "4.8%",
-      repaymentTime: "18-60 meses",
+      repaymentTime: "9-12 meses",
       investmentInterests: ["Finanzas", "Inversión", "Negocios"],
       shortDescription: "Especialista en finanzas con más de 20 años de experiencia.",
       profileImage: "https://randomuser.me/api/portraits/men/12.jpg"
@@ -38,7 +39,7 @@ export const profiles = [
       age: 42,
       status: "Médica Especialista",
       interestRate: "5.2%",
-      repaymentTime: "12-48 meses",
+      repaymentTime: "10-11 meses",
       investmentInterests: ["Salud", "Ciencia", "Educación"],
       shortDescription: "Interesada en apoyar proyectos médicos y de investigación.",
       profileImage: "https://randomuser.me/api/portraits/women/13.jpg"
@@ -49,7 +50,7 @@ export const profiles = [
       age: 47,
       status: "Arquitecto",
       interestRate: "5.7%",
-      repaymentTime: "24-60 meses",
+      repaymentTime: "7-9 meses",
       investmentInterests: ["Inmobiliario", "Diseño", "Construcción"],
       shortDescription: "Buscando oportunidades en desarrollo de infraestructuras innovadoras.",
       profileImage: "https://randomuser.me/api/portraits/men/14.jpg"
@@ -60,7 +61,7 @@ export const profiles = [
       age: 35,
       status: "Diseñadora de Moda",
       interestRate: "6.5%",
-      repaymentTime: "12-36 meses",
+      repaymentTime: "4-6 meses",
       investmentInterests: ["Moda", "Arte", "Negocios"],
       shortDescription: "Apoya a emprendedores en el sector creativo.",
       profileImage: "https://randomuser.me/api/portraits/women/15.jpg"
@@ -71,7 +72,7 @@ export const profiles = [
       age: 52,
       status: "Ingeniero Industrial",
       interestRate: "5.3%",
-      repaymentTime: "18-48 meses",
+      repaymentTime: "5-6 meses",
       investmentInterests: ["Industria", "Energía", "Tecnología"],
       shortDescription: "Busca inversiones en eficiencia energética e innovación industrial.",
       profileImage: "https://randomuser.me/api/portraits/men/16.jpg"
@@ -82,7 +83,7 @@ export const profiles = [
       age: 40,
       status: "Psicóloga",
       interestRate: "6.1%",
-      repaymentTime: "12-36 meses",
+      repaymentTime: "10-12 meses",
       investmentInterests: ["Salud Mental", "Educación", "Bienestar"],
       shortDescription: "Interesada en proyectos que mejoren la calidad de vida.",
       profileImage: "https://randomuser.me/api/portraits/women/17.jpg"
@@ -93,7 +94,7 @@ export const profiles = [
       age: 44,
       status: "Chef Ejecutivo",
       interestRate: "5.8%",
-      repaymentTime: "24-48 meses",
+      repaymentTime: "6-8 meses",
       investmentInterests: ["Gastronomía", "Turismo", "Negocios"],
       shortDescription: "Busca invertir en innovaciones en el sector de alimentos y bebidas.",
       profileImage: "https://randomuser.me/api/portraits/men/18.jpg"
@@ -115,7 +116,7 @@ export const profiles = [
       age: 55,
       status: "Empresario de Tecnología",
       interestRate: "5.4%",
-      repaymentTime: "24-72 meses",
+      repaymentTime: "4-7 meses",
       investmentInterests: ["Tecnología", "Startups", "IA"],
       shortDescription: "Apasionado por la innovación y la transformación digital.",
       profileImage: "https://randomuser.me/api/portraits/men/20.jpg"
@@ -123,10 +124,10 @@ export const profiles = [
   {
       id: "12",
       name: "Valeria Rojas",
-      age: 33,
+      age: 24,
       status: "Emprendedora Social",
       interestRate: "6.2%",
-      repaymentTime: "12-48 meses",
+      repaymentTime: "6-8 meses",
       investmentInterests: ["Impacto Social", "Sostenibilidad", "Educación"],
       shortDescription: "Fomenta proyectos con impacto ambiental y social positivo.",
       profileImage: "https://randomuser.me/api/portraits/women/21.jpg"
@@ -234,3 +235,4 @@ export const messages = [
       ],
     },
   ];
+

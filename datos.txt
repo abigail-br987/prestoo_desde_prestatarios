@@ -1,0 +1,486 @@
+DATOS ________ PRESTO DESDE LA PERSPECTIVA DE LOS PRESTATARIOS
+
+export const profiles = [
+  {
+      id: "1",
+      name: "Javier Ríos",
+      age: 27,
+      status: "Empresario",
+      interestRate: "5.5%",
+      repaymentTime: "10-12 meses",
+      investmentInterests: ["Tecnología", "Negocios", "Educación"],
+      shortDescription: "Proyecto en Educación",
+      profileImage: "https://randomuser.me/api/portraits/men/10.jpg"
+  },
+  {
+      id: "2",
+      name: "Lucía Fernández",
+      age: 38,
+      status: "Abogada",
+      interestRate: "6%",
+      repaymentTime: "6-8 meses",
+      investmentInterests: ["Salud", "Educación", "Inmobiliario"],
+      shortDescription: "Proyecto Social",
+      profileImage: "https://randomuser.me/api/portraits/women/11.jpg"
+  },
+  {
+      id: "3",
+      name: "Fernando Salas",
+      age: 50,
+      status: "Contador Público",
+      interestRate: "4.8%",
+      repaymentTime: "9-12 meses",
+      investmentInterests: ["Finanzas", "Inversión", "Negocios"],
+      shortDescription: "Especialista en finanzas con más de 20 años de experiencia.",
+      profileImage: "https://randomuser.me/api/portraits/men/12.jpg"
+  },
+  {
+      id: "4",
+      name: "Elena Gómez",
+      age: 42,
+      status: "Médica Especialista",
+      interestRate: "5.2%",
+      repaymentTime: "10-11 meses",
+      investmentInterests: ["Salud", "Ciencia", "Educación"],
+      shortDescription: "Interesada en apoyar proyectos médicos y de investigación.",
+      profileImage: "https://randomuser.me/api/portraits/women/13.jpg"
+  },
+  {
+      id: "5",
+      name: "Carlos Herrera",
+      age: 47,
+      status: "Arquitecto",
+      interestRate: "5.7%",
+      repaymentTime: "7-9 meses",
+      investmentInterests: ["Inmobiliario", "Diseño", "Construcción"],
+      shortDescription: "Buscando oportunidades en desarrollo de infraestructuras innovadoras.",
+      profileImage: "https://randomuser.me/api/portraits/men/14.jpg"
+  },
+  {
+      id: "6",
+      name: "Andrea Torres",
+      age: 35,
+      status: "Diseñadora de Moda",
+      interestRate: "6.5%",
+      repaymentTime: "4-6 meses",
+      investmentInterests: ["Moda", "Arte", "Negocios"],
+      shortDescription: "Apoya a emprendedores en el sector creativo.",
+      profileImage: "https://randomuser.me/api/portraits/women/15.jpg"
+  },
+  {
+      id: "7",
+      name: "Martín López",
+      age: 52,
+      status: "Ingeniero Industrial",
+      interestRate: "5.3%",
+      repaymentTime: "5-6 meses",
+      investmentInterests: ["Industria", "Energía", "Tecnología"],
+      shortDescription: "Busca inversiones en eficiencia energética e innovación industrial.",
+      profileImage: "https://randomuser.me/api/portraits/men/16.jpg"
+  },
+  {
+      id: "8",
+      name: "Sofía Méndez",
+      age: 40,
+      status: "Psicóloga",
+      interestRate: "6.1%",
+      repaymentTime: "10-12 meses",
+      investmentInterests: ["Salud Mental", "Educación", "Bienestar"],
+      shortDescription: "Interesada en proyectos que mejoren la calidad de vida.",
+      profileImage: "https://randomuser.me/api/portraits/women/17.jpg"
+  },
+  {
+      id: "9",
+      name: "Rodrigo Castillo",
+      age: 44,
+      status: "Chef Ejecutivo",
+      interestRate: "5.8%",
+      repaymentTime: "6-8 meses",
+      investmentInterests: ["Gastronomía", "Turismo", "Negocios"],
+      shortDescription: "Busca invertir en innovaciones en el sector de alimentos y bebidas.",
+      profileImage: "https://randomuser.me/api/portraits/men/18.jpg"
+  },
+  {
+      id: "10",
+      name: "Camila Vargas",
+      age: 36,
+      status: "Economista",
+      interestRate: "4.9%",
+      repaymentTime: "18-60 meses",
+      investmentInterests: ["Finanzas", "Educación", "Empresas"],
+      shortDescription: "Enfocada en inversiones de alto impacto en educación financiera.",
+      profileImage: "https://randomuser.me/api/portraits/women/19.jpg"
+  },
+  {
+      id: "11",
+      name: "Gonzalo Pérez",
+      age: 55,
+      status: "Empresario de Tecnología",
+      interestRate: "5.4%",
+      repaymentTime: "4-7 meses",
+      investmentInterests: ["Tecnología", "Startups", "IA"],
+      shortDescription: "Apasionado por la innovación y la transformación digital.",
+      profileImage: "https://randomuser.me/api/portraits/men/20.jpg"
+  },
+  {
+      id: "12",
+      name: "Valeria Rojas",
+      age: 24,
+      status: "Emprendedora Social",
+      interestRate: "6.2%",
+      repaymentTime: "6-8 meses",
+      investmentInterests: ["Impacto Social", "Sostenibilidad", "Educación"],
+      shortDescription: "Fomenta proyectos con impacto ambiental y social positivo.",
+      profileImage: "https://randomuser.me/api/portraits/women/21.jpg"
+  }
+];
+
+
+
+
+export const messages = [
+    {
+      id: "m1",
+      profileId: "1",
+      messages: [
+        { sender: "Luis Pérez", text: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+        { sender: "Tú", text: "¡Hola Luis! Todo bien, ¿y tú?", timestamp: "10:05 AM" },
+      ],
+    },
+    {
+      id: "m2",
+      profileId: "2",
+      messages: [
+        { sender: "María López", text: "¿Me podrías dar más detalles?", timestamp: "11:00 AM" },
+        { sender: "Tú", text: "Por supuesto, te explico...", timestamp: "11:10 AM" },
+      ],
+    },
+    {
+      id: "m3",
+      profileId: "3",
+      messages: [
+        { sender: "Pedro Martínez", text: "Estoy interesado en tu propuesta.", timestamp: "9:30 AM" },
+        { sender: "Tú", text: "Genial, te paso más información.", timestamp: "9:40 AM" },
+      ],
+    },
+    {
+      id: "m4",
+      profileId: "4",
+      messages: [
+        { sender: "Ana Ramírez", text: "Me gustaría saber más sobre el proyecto.", timestamp: "3:15 PM" },
+        { sender: "Tú", text: "¡Claro! Te comparto los detalles.", timestamp: "3:20 PM" },
+      ],
+    },
+    {
+      id: "m5",
+      profileId: "5",
+      messages: [
+        { sender: "Carlos López", text: "¿Cuándo podemos reunirnos?", timestamp: "1:00 PM" },
+        { sender: "Tú", text: "¿Te parece bien el viernes a las 4 PM?", timestamp: "1:05 PM" },
+      ],
+    },
+    {
+      id: "m6",
+      profileId: "6",
+      messages: [
+        { sender: "Andrea Gutiérrez", text: "Tengo una idea que quiero compartir contigo.", timestamp: "5:45 PM" },
+        { sender: "Tú", text: "¡Me encantaría escucharla!", timestamp: "5:50 PM" },
+      ],
+    },
+    {
+      id: "m7",
+      profileId: "7",
+      messages: [
+        { sender: "Martín Álvarez", text: "¿Tienes experiencia en inversiones energéticas?", timestamp: "8:10 AM" },
+        { sender: "Tú", text: "Sí, he trabajado en varios proyectos de eficiencia energética.", timestamp: "8:15 AM" },
+      ],
+    },
+    {
+      id: "m8",
+      profileId: "8",
+      messages: [
+        { sender: "Sofía Delgado", text: "Quiero invertir en salud mental, ¿qué opinas?", timestamp: "6:30 PM" },
+        { sender: "Tú", text: "Es un sector clave, hay mucho potencial de impacto.", timestamp: "6:35 PM" },
+      ],
+    },
+    {
+      id: "m9",
+      profileId: "9",
+      messages: [
+        { sender: "Rodrigo Méndez", text: "¿Tienes contactos en la industria gastronómica?", timestamp: "7:00 PM" },
+        { sender: "Tú", text: "Sí, puedo ponerte en contacto con algunos chefs.", timestamp: "7:05 PM" },
+      ],
+    },
+    {
+      id: "m10",
+      profileId: "10",
+      messages: [
+        { sender: "Camila Torres", text: "Quisiera aprender más sobre educación financiera.", timestamp: "2:00 PM" },
+        { sender: "Tú", text: "¡Con gusto! Te recomiendo algunos recursos.", timestamp: "2:05 PM" },
+      ],
+    },
+    {
+      id: "m11",
+      profileId: "11",
+      messages: [
+        { sender: "Gonzalo Herrera", text: "Estoy explorando oportunidades en IA.", timestamp: "4:30 PM" },
+        { sender: "Tú", text: "Interesante, ¿tienes alguna idea en mente?", timestamp: "4:35 PM" },
+      ],
+    },
+    {
+      id: "m12",
+      profileId: "12",
+      messages: [
+        { sender: "Valeria Pérez", text: "¿Cómo puedo hacer mi negocio más sostenible?", timestamp: "9:50 AM" },
+        { sender: "Tú", text: "Podemos discutir estrategias de impacto social.", timestamp: "9:55 AM" },
+      ],
+    },
+  ];
+
+
+
+
+DATOS  _________ PRESTOO DESDE LA PERSPECIVA DE LOS PRESTAMISTAS
+
+export const profiles = [
+    {
+      id: "1",
+      name: "Luis Pérez",
+      age: 32,
+      status: "Ingeniero de Sistemas",
+      interestRate: "5%",
+      repaymentTime: "8 meses",
+      requestedAmount: "S/2,000",
+      loanReasonTags: ["Negocio", "Expansión"],
+      loanExplanation: "Comprar una laptop para trabajo remoto",
+      repaymentJustification: "Trabajo a tiempo parcial",
+      score: 85,
+      loanHistory: [
+        "Préstamo 1: Pagado",
+        "Préstamo 2: Pagado",
+        "Préstamo 3: Pendiente"
+      ],
+      shortDescription: "Apasionado por la innovación y la tecnología.",
+      profileImage: "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      id: "2",
+      name: "María López",
+      age: 27,
+      status: "Médica General",
+      interestRate: "6%",
+      repaymentTime: "12 meses",
+      requestedAmount: "S/3,000",
+      loanReasonTags: ["Educación", "Especialización"],
+      loanExplanation: "Pagar un curso en línea de pediatría.",
+      repaymentJustification: "Aumento de sueldo",
+      score: 90,
+      loanHistory: [
+        "Préstamo 1: Pagado",
+        "Préstamo 2: Pagado",
+        "Préstamo 3: Pagado"
+      ],
+      shortDescription: "Dedicada a mejorar la salud de los niños.",
+      profileImage: "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      id: "3",
+      name: "Carlos Ramírez",
+      age: 30,
+      status: "Maestro de Primaria",
+      interestRate: "4.5%",
+      repaymentTime: "12 meses",
+      requestedAmount: "S/4,800",
+      loanReasonTags: ["Hogar"],
+      loanExplanation: "Pagar un semestre de la universidad.",
+      repaymentJustification: "Trabajo a tiempo parcial",
+      score: 80,
+      loanHistory: [
+        "Préstamo 1: Pagado",
+        "Préstamo 2: Pendiente",
+        "Préstamo 3: Pendiente"
+      ],
+      shortDescription: "Comprometido con la educación de los niños.",
+      profileImage: "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      id: "4",
+      name: "Ana Torres",
+      age: 35,
+      status: "Arquitecta",
+      interestRate: "5.2%",
+      repaymentTime: "12 meses",
+      requestedAmount: "S/4,500",
+      loanReasonTags: ["Negocio", "Diseño"],
+      loanExplanation: "Comprar una guitarra eléctrica para presentaciones.",
+      repaymentJustification: "Tengo un emprendimiento",
+      score: 88,
+      loanHistory: ["Préstamo 1: Pagado"],
+      shortDescription: "Apasionada por la creatividad y la arquitectura.",
+      profileImage: "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      id: "5",
+      name: "David Quispe",
+      age: 29,
+      status: "Chef",
+      interestRate: "5.0%",
+      repaymentTime: "10 meses",
+      requestedAmount: "S/3,800",
+      loanReasonTags: ["Gastronomía", "Equipo"],
+      loanExplanation: "Comprar utensilios de cocina.",
+      repaymentJustification: "Trabajo de mesero",
+      score: 87,
+      loanHistory: ["Préstamo 1: Pagado"],
+      shortDescription: "Chef innovador con pasión por la cocina fusión.",
+      profileImage: "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+      id: "6",
+      name: "Laura Montes",
+      age: 26,
+      status: "Community Manager",
+      interestRate: "5.5%",
+      repaymentTime: "6 meses",
+      requestedAmount: "S/2,500",
+      loanReasonTags: ["Educación", "Capacitación"],
+      loanExplanation: "Pagar un curso de marketing digital.",
+      repaymentJustification: "Aumento de sueldo",
+      score: 82,
+      loanHistory: ["Préstamo 1: Pagado"],
+      shortDescription: "Creativa y apasionada del marketing en redes sociales.",
+      profileImage: "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    {
+      id: "7",
+      name: "Roberto Sánchez",
+      age: 31,
+      status: "Fotógrafo",
+      interestRate: "5.0%",
+      repaymentTime: "9 meses",
+      requestedAmount: "S/4,000",
+      loanReasonTags: ["Equipo", "Producción"],
+      loanExplanation: "Comprar una cámara profesional.",
+      repaymentJustification: "Mejora de la calidad del servicio.",
+      score: 86,
+      loanHistory: ["Préstamo 1: Pagado", "Préstamo 2: Pagado"],
+      shortDescription: "Capturando momentos inolvidables.",
+      profileImage: "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    {
+      id: "8",
+      name: "Verónica Paredes",
+      age: 28,
+      status: "Diseñadora de Modas",
+      interestRate: "5.8%",
+      repaymentTime: "11 meses",
+      requestedAmount: "S/3,600",
+      loanReasonTags: ["Negocio", "Producción"],
+      loanExplanation: "Compra de tela para nueva colección.",
+      repaymentJustification: "Incremento de ventas en temporada.",
+      score: 83,
+      loanHistory: ["Préstamo 1: Pagado"],
+      shortDescription: "Diseños únicos con un toque moderno.",
+      profileImage: "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    {
+      id: "9",
+      name: "Alonso García",
+      age: 33,
+      status: "Programador Freelance",
+      interestRate: "4.9%",
+      repaymentTime: "7 meses",
+      requestedAmount: "S/2,200",
+      loanReasonTags: ["Educación", "Tecnología"],
+      loanExplanation: "Actualizar equipo de desarrollo.",
+      repaymentJustification: "Mayor eficiencia en proyectos.",
+      score: 89,
+      loanHistory: ["Préstamo 1: Pagado"],
+      shortDescription: "Apasionado por el desarrollo web y móvil.",
+      profileImage: "https://randomuser.me/api/portraits/men/9.jpg"
+    }
+];
+
+
+export const messages = [
+  {
+    id: "m1",
+    profileId: "1",
+    messages: [
+      { sender: "Luis Pérez", text: "Hola, ¿cómo estás?", timestamp: "10:00 AM" },
+      { sender: "Tú", text: "¡Hola Luis! Todo bien, ¿y tú?", timestamp: "10:05 AM" },
+    ],
+  },
+  {
+    id: "m2",
+    profileId: "2",
+    messages: [
+      { sender: "María López", text: "¿Me podrías dar más detalles?", timestamp: "11:00 AM" },
+      { sender: "Tú", text: "Por supuesto, te explico...", timestamp: "11:10 AM" },
+    ],
+  },
+  {
+    id: "m3",
+    profileId: "3",
+    messages: [
+      { sender: "Carlos Ramírez", text: "¿Cuándo puedo recibir una respuesta?", timestamp: "12:30 PM" },
+      { sender: "Tú", text: "En breve te confirmo.", timestamp: "12:35 PM" },
+    ],
+  },
+  {
+    id: "m4",
+    profileId: "4",
+    messages: [
+      { sender: "Ana Torres", text: "Estoy interesada en conocer más sobre las opciones de pago.", timestamp: "2:00 PM" },
+      { sender: "Tú", text: "Claro, te comparto los detalles a continuación.", timestamp: "2:05 PM" },
+    ],
+  },
+  {
+    id: "m5",
+    profileId: "5",
+    messages: [
+      { sender: "Pedro Castillo", text: "¿Hay algún requisito adicional?", timestamp: "3:45 PM" },
+      { sender: "Tú", text: "Déjame verificarlo y te informo.", timestamp: "3:50 PM" },
+    ],
+  },
+  {
+    id: "m6",
+    profileId: "6",
+    messages: [
+      { sender: "Sofía Mendoza", text: "Quisiera saber si es posible ajustar el monto del préstamo.", timestamp: "4:20 PM" },
+      { sender: "Tú", text: "Podemos analizarlo y ver qué opciones hay.", timestamp: "4:25 PM" },
+    ],
+  },
+  {
+    id: "m7",
+    profileId: "7",
+    messages: [
+      { sender: "Ricardo Gómez", text: "Necesito información sobre los plazos de pago.", timestamp: "5:10 PM" },
+      { sender: "Tú", text: "Aquí tienes los detalles de los plazos.", timestamp: "5:15 PM" },
+    ],
+  },
+  {
+    id: "m8",
+    profileId: "8",
+    messages: [
+      { sender: "Luis Pérez", text: "¿Cómo puedo iniciar el proceso de solicitud?", timestamp: "6:00 PM" },
+      { sender: "Tú", text: "Te guiaré paso a paso.", timestamp: "6:05 PM" },
+    ],
+  },
+  {
+    id: "m9",
+    profileId: "9",
+    messages: [
+      { sender: "María López", text: "¿Cuánto tiempo toma la aprobación?", timestamp: "7:30 PM" },
+      { sender: "Tú", text: "Generalmente entre 24 y 48 horas.", timestamp: "7:35 PM" },
+    ],
+  },
+  {
+    id: "m10",
+    profileId: "10",
+    messages: [
+      { sender: "Ana Torres", text: "Estoy lista para proceder con la solicitud.", timestamp: "8:00 PM" },
+      { sender: "Tú", text: "¡Perfecto! Te enviaré los siguientes pasos.", timestamp: "8:05 PM" },
+    ],
+  },
+];
