@@ -8,7 +8,7 @@ const prestamos = [
   {
     id: "1",
     prestatario: "Carlos Gómez",
-    monto: 150,
+    monto: 1050,
     fechaVencimiento: "10 de abril de 2025",
     estado: "A tiempo",
   },
@@ -18,13 +18,6 @@ const prestamos = [
     monto: 300,
     fechaVencimiento: "30 de marzo de 2025",
     estado: "Retrasado",
-  },
-  {
-    id: "3",
-    prestatario: "Luis Pérez",
-    monto: 500,
-    fechaVencimiento: "15 de mayo de 2025",
-    estado: "A tiempo",
   },
 ];
 
