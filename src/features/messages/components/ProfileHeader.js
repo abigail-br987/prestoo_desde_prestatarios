@@ -29,9 +29,47 @@ const ProfileHeader = ({ profile }) => {
       <View style={{ flex: 1 }}>
         <Text style={[fonts.h3]}>{profile?.name}</Text>
         <Text style={[fonts.label1]}>
-          {profile?.age} años | {profile?.status}
+          {profile?.age} años
         </Text>
         <Text style={[fonts.label2]}>{profile?.shortDescription}</Text>
+        <Text style={[fonts.label2]}>Tasa de interes preferida: {profile?.interestRate}</Text>
+      
+                    <Text style={[fonts.subheading, {fontSize:13}]}>Intereses:</Text>
+      
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        gap: 5,
+                        width: "100%",
+                        justifyContent: "space-evenly",
+                      }}
+                    >
+                      {profile.investmentInterests.map((tag, index) => (
+                        <View
+                          key={index}
+                          style={{
+                            backgroundColor: colors.primaryLightColor,
+                            paddingHorizontal: 10,
+                            paddingVertical: 3,
+                            borderRadius: 5,
+                            flexGrow: 1, 
+                            alignItems: "center",
+                          }}
+                        >
+                          <Text
+                            style={[
+                              fonts.label2,
+                              { fontSize: 12, textAlign: "center" },
+                            ]}
+                          >
+                            {tag}
+                          </Text>
+                        </View>
+                      ))}
+                    </View>
+      
+
       </View>
     </TouchableOpacity>
   );
